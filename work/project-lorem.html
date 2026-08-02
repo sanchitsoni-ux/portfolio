@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Lorem — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Project Lorem — an agentic workflow design case study by Sanchit Soni." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--accent-rgb), 0.6);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>01 — Agentic Workflow Design</span>
+        <h1 class="project-hero-title" data-reveal>Project <em>Lorem</em></h1>
+        <p class="section-desc" data-reveal>Reimagining how finance teams collaborate with an AI copilot — lorem ipsum dolor sit amet, from raw automation to trusted partner.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Lead Product Designer</strong></div>
+          <div class="project-meta-item"><span>Timeline</span><strong>6 months, lorem ipsum</strong></div>
+          <div class="project-meta-item"><span>Tools</span><strong>Figma, Framer, Origami</strong></div>
+          <div class="project-meta-item"><span>Platform</span><strong>Web &amp; iOS</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover grad-1" data-parallax data-speed="0.06"></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Challenge</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, <strong>ut enim ad minim veniam</strong> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>42%</strong><span>faster task completion, lorem</span></div>
+      <div class="project-stat"><strong>3.2x</strong><span>increase in daily active use</span></div>
+      <div class="project-stat"><strong>96</strong><span>usability score, ipsum</span></div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item grad-2" data-hover></div>
+      <div class="project-gallery-item grad-3" data-hover></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Process</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.</p>
+        </div>
+      </div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Outcome</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prototype" id="prototype">
+      <div class="section-head">
+        <span class="section-tag" data-reveal>Live Prototype</span>
+        <h2 class="section-title" data-reveal>Try it, lorem ipsum</h2>
+      </div>
+
+      <div class="device-frame" data-parallax data-speed="0.05">
+        <div class="device-frame-bar">
+          <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+          <div class="device-url">figma.com/proto/project-lorem</div>
+        </div>
+        <div class="device-frame-screen">
+          <iframe id="protoFrame" class="proto-iframe" src="about:blank" title="Embedded prototype placeholder" loading="lazy"></iframe>
+          <div class="proto-placeholder">
+            <div class="proto-placeholder-orb"></div>
+            <p>Lorem ipsum interactive prototype embed placeholder</p>
+            <span>Drop a Figma / Framer / live URL here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="project-ipsum.html" class="project-next" data-hover>
+      <span class="project-next-label">Next Project</span>
+      <span class="project-next-title">
+        Project Ipsum
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

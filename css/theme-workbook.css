@@ -1,0 +1,268 @@
+/* ============================================================
+   THEME: WORKBOOK
+   A sharp, engineer's-spec-sheet aesthetic (Inter + JetBrains
+   Mono, pure black/white, one cyan accent, sharp corners, hard
+   offset shadows) — inspired by karolbinkow.ski. Loaded after
+   style.css and scoped entirely under [data-theme="workbook"],
+   so the hand-drawn theme (the default) is untouched.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root[data-theme="workbook"] {
+  --primary: #00b8d4;
+  --primary-rgb: 0, 184, 212;
+  --primary-hover: #0093ab;
+  --accent: #00b8d4;
+  --accent-rgb: 0, 184, 212;
+  --yellow: #00b8d4;
+  --yellow-rgb: 0, 184, 212;
+  --yellow-ink: #0a0a0a;
+  --bg: #ffffff;
+  --bg-hero: #d7f5fb;
+  --card-bg: #ffffff;
+  --border-color: #0a0a0a;
+  --ink-rgb: 10, 10, 10;
+  --text-primary: #0a0a0a;
+  --text-secondary: #383838;
+  --text-tertiary: #6b6b6b;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --wb-bg-soft: #f3f3ee;
+  --wb-shadow: 4px 4px 0 rgba(10, 10, 10, 1);
+}
+
+/* ---------- base ---------- */
+[data-theme="workbook"] body {
+  background-image: none;
+  cursor: auto;
+  font-weight: 400;
+}
+[data-theme="workbook"] .cursor-dot,
+[data-theme="workbook"] .cursor-ring,
+[data-theme="workbook"] .grain,
+[data-theme="workbook"] .rough-grid-bg,
+[data-theme="workbook"] .rough-overlay,
+[data-theme="workbook"] .binder-clip,
+[data-theme="workbook"] .washi-tape,
+[data-theme="workbook"] .doodle-arrow,
+[data-theme="workbook"] .doodle-scribble,
+[data-theme="workbook"] .about-card-glow,
+[data-theme="workbook"] .rough-annotation {
+  display: none !important;
+}
+[data-theme="workbook"] ::selection { background: var(--primary); color: #fff; }
+
+/* ---------- typography ---------- */
+[data-theme="workbook"] .hero-title-name .line-name,
+[data-theme="workbook"] .section-title,
+[data-theme="workbook"] .project-hero-title,
+[data-theme="workbook"] .contact-title,
+[data-theme="workbook"] .nav-logo,
+[data-theme="workbook"] .project-next-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+[data-theme="workbook"] .hero-title-accent .reveal-text,
+[data-theme="workbook"] .dynamic-word {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+[data-theme="workbook"] .dynamic-word {
+  background: var(--primary);
+  color: #0a0a0a !important;
+  padding: 0 6px;
+}
+[data-theme="workbook"] .project-hero-title em,
+[data-theme="workbook"] .work-item:hover h3 {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+[data-theme="workbook"] .hero-eyebrow,
+[data-theme="workbook"] .section-tag,
+[data-theme="workbook"] .work-index,
+[data-theme="workbook"] .timeline-date,
+[data-theme="workbook"] .project-meta-item span,
+[data-theme="workbook"] .lab-mini-tag,
+[data-theme="workbook"] .work-tags span,
+[data-theme="workbook"] .device-url,
+[data-theme="workbook"] .nav-links a,
+[data-theme="workbook"] .project-next-label,
+[data-theme="workbook"] .work-cta,
+[data-theme="workbook"] .project-back,
+[data-theme="workbook"] .footer {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+[data-theme="workbook"] .hero-eyebrow,
+[data-theme="workbook"] .section-tag {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------- shape reset: sharp corners, no rotation ---------- */
+[data-theme="workbook"] .hero-polaroid,
+[data-theme="workbook"] .project-hero-polaroid,
+[data-theme="workbook"] .about-card,
+[data-theme="workbook"] .work-item-media,
+[data-theme="workbook"] .work-media-inner,
+[data-theme="workbook"] .lab-mini-card,
+[data-theme="workbook"] .sticky-note,
+[data-theme="workbook"] .about-stat-float,
+[data-theme="workbook"] .device-frame-bar,
+[data-theme="workbook"] .device-frame-screen,
+[data-theme="workbook"] .project-cover,
+[data-theme="workbook"] .project-gallery-item,
+[data-theme="workbook"] .btn,
+[data-theme="workbook"] .nav-cta {
+  border-radius: 0 !important;
+}
+[data-theme="workbook"] .hero-polaroid,
+[data-theme="workbook"] .project-hero-polaroid,
+[data-theme="workbook"] .about-card,
+[data-theme="workbook"] .about-card:hover,
+[data-theme="workbook"] .work-item-media,
+[data-theme="workbook"] .work-item:nth-child(4n+1) .work-item-media,
+[data-theme="workbook"] .work-item:nth-child(4n+2) .work-item-media,
+[data-theme="workbook"] .work-item:nth-child(4n+3) .work-item-media,
+[data-theme="workbook"] .work-item:nth-child(4n+4) .work-item-media,
+[data-theme="workbook"] .work-item:hover .work-item-media,
+[data-theme="workbook"] .lab-mini-card:nth-child(1),
+[data-theme="workbook"] .lab-mini-card:nth-child(2),
+[data-theme="workbook"] .lab-mini-card:nth-child(3),
+[data-theme="workbook"] .lab-mini-card:hover,
+[data-theme="workbook"] .sticky-note,
+[data-theme="workbook"] .sticky-note:hover,
+[data-theme="workbook"] .rot-1,
+[data-theme="workbook"] .rot-2,
+[data-theme="workbook"] .rot-3,
+[data-theme="workbook"] .rot-4,
+[data-theme="workbook"] .about-stat-1,
+[data-theme="workbook"] .about-stat-2 {
+  transform: none;
+  animation: none;
+}
+[data-theme="workbook"] .about-tags span,
+[data-theme="workbook"] .work-tags span {
+  border-radius: 0;
+}
+
+/* ---------- hard offset shadows + solid black borders ---------- */
+[data-theme="workbook"] .hero-polaroid,
+[data-theme="workbook"] .project-hero-polaroid,
+[data-theme="workbook"] .about-card,
+[data-theme="workbook"] .work-item-media,
+[data-theme="workbook"] .lab-mini-card,
+[data-theme="workbook"] .sticky-note,
+[data-theme="workbook"] .about-stat-float,
+[data-theme="workbook"] .device-frame-bar,
+[data-theme="workbook"] .device-frame-screen,
+[data-theme="workbook"] .project-cover,
+[data-theme="workbook"] .project-gallery-item {
+  border: 2px solid #0a0a0a;
+  box-shadow: var(--wb-shadow);
+  background-color: #ffffff;
+}
+[data-theme="workbook"] .paper-cream,
+[data-theme="workbook"] .paper-white,
+[data-theme="workbook"] .paper-kraft,
+[data-theme="workbook"] .paper-yellow {
+  background: #ffffff;
+}
+[data-theme="workbook"] .lab-mini-card:nth-child(2n) { background: var(--wb-bg-soft); }
+
+/* ---------- buttons ---------- */
+[data-theme="workbook"] .btn,
+[data-theme="workbook"] .nav-cta {
+  border: 2px solid #0a0a0a;
+  box-shadow: var(--wb-shadow);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+[data-theme="workbook"] .btn-primary {
+  background: var(--primary);
+  color: #0a0a0a;
+  box-shadow: var(--wb-shadow);
+}
+[data-theme="workbook"] .btn-ghost { background: #ffffff; color: #0a0a0a; }
+[data-theme="workbook"] .btn:hover,
+[data-theme="workbook"] .btn-primary:hover,
+[data-theme="workbook"] .nav-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(10, 10, 10, 1);
+  background: var(--primary);
+}
+[data-theme="workbook"] .btn:active,
+[data-theme="workbook"] .nav-cta:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(10, 10, 10, 1);
+}
+
+/* ---------- nav ---------- */
+[data-theme="workbook"] .nav {
+  border-bottom: 3px solid #0a0a0a;
+  background: #ffffff;
+}
+[data-theme="workbook"] .nav.scrolled {
+  background: #ffffff;
+  backdrop-filter: none;
+}
+[data-theme="workbook"] .theme-switcher {
+  font-family: var(--font-mono);
+  border: 2px solid #0a0a0a;
+  background: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ---------- sections ---------- */
+[data-theme="workbook"] .about,
+[data-theme="workbook"] .prototype {
+  background: var(--wb-bg-soft);
+}
+[data-theme="workbook"] .contact { background: var(--bg-hero); }
+[data-theme="workbook"] .contact::before,
+[data-theme="workbook"] .contact::after {
+  display: none;
+}
+
+/* ---------- name marquee -> brutalist ticker ---------- */
+[data-theme="workbook"] .name-marquee {
+  background: #0a0a0a;
+  border-top: none;
+  border-bottom: none;
+}
+[data-theme="workbook"] .name-marquee-track span {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0;
+}
+[data-theme="workbook"] .name-marquee-track span:nth-child(odd),
+[data-theme="workbook"] .name-marquee-track span:nth-child(even) {
+  color: #ffffff;
+}
+
+/* ---------- misc ---------- */
+[data-theme="workbook"] .work-media-badge {
+  border-radius: 0;
+  border: 2px solid #0a0a0a;
+}
+[data-theme="workbook"] .work-item:hover .work-media-badge {
+  background: var(--primary);
+  color: #0a0a0a;
+}
+[data-theme="workbook"] .about-photo-placeholder {
+  border-radius: 0;
+  background: var(--primary);
+  color: #0a0a0a;
+}

@@ -1,0 +1,287 @@
+/* ============================================================
+   THEME: ORANGE CANDY
+   The Workbook theme's brutalist bones (sharp corners, hard
+   offset shadows, alternating section backgrounds, no rotation)
+   in dark mode, with the cyan accent swapped for a candy orange
+   and everything set in a single monospace face. Loaded after
+   style.css and theme-workbook.css, scoped entirely under
+   [data-theme="orange-candy"].
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+:root[data-theme="orange-candy"] {
+  --primary: #ff7a29;
+  --primary-rgb: 255, 122, 41;
+  --primary-hover: #ff9752;
+  --accent: #ff7a29;
+  --accent-rgb: 255, 122, 41;
+  --yellow: #ff7a29;
+  --yellow-rgb: 255, 122, 41;
+  --yellow-ink: #000000;
+  --bg: #000000;
+  --bg-hero: #000000;
+  --card-bg: #000000;
+  --border-color: #000000;
+  --ink-rgb: 200, 200, 200;
+  --text-primary: #f5f2ec;
+  --text-secondary: #b8b3a8;
+  --text-tertiary: #857f74;
+  --font-sans: 'Roboto Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, monospace;
+  --wb-bg-soft: #000000;
+  --wb-shadow: 4px 4px 0 rgba(255, 122, 41, 1);
+  --dot-grid: radial-gradient(rgba(170, 170, 170, 0.35) 1.5px, transparent 1.5px);
+}
+
+/* ---------- base ---------- */
+[data-theme="orange-candy"] body {
+  background-color: var(--bg);
+  background-image: var(--dot-grid);
+  background-size: 28px 28px;
+  cursor: auto;
+  font-weight: 400;
+}
+[data-theme="orange-candy"] .cursor-dot,
+[data-theme="orange-candy"] .cursor-ring,
+[data-theme="orange-candy"] .grain,
+[data-theme="orange-candy"] .rough-grid-bg,
+[data-theme="orange-candy"] .rough-overlay,
+[data-theme="orange-candy"] .binder-clip,
+[data-theme="orange-candy"] .washi-tape,
+[data-theme="orange-candy"] .doodle-arrow,
+[data-theme="orange-candy"] .doodle-scribble,
+[data-theme="orange-candy"] .about-card-glow,
+[data-theme="orange-candy"] .rough-annotation {
+  display: none !important;
+}
+[data-theme="orange-candy"] ::selection { background: var(--primary); color: #000000; }
+
+/* ---------- typography ---------- */
+[data-theme="orange-candy"] .hero-title-name .line-name,
+[data-theme="orange-candy"] .section-title,
+[data-theme="orange-candy"] .project-hero-title,
+[data-theme="orange-candy"] .contact-title,
+[data-theme="orange-candy"] .nav-logo,
+[data-theme="orange-candy"] .project-next-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+[data-theme="orange-candy"] .hero-title-accent .reveal-text,
+[data-theme="orange-candy"] .dynamic-word {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+[data-theme="orange-candy"] .dynamic-word {
+  background: var(--primary);
+  color: #000000 !important;
+  padding: 0 6px;
+}
+[data-theme="orange-candy"] .project-hero-title em,
+[data-theme="orange-candy"] .work-item:hover h3 {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+[data-theme="orange-candy"] .hero-eyebrow,
+[data-theme="orange-candy"] .section-tag,
+[data-theme="orange-candy"] .work-index,
+[data-theme="orange-candy"] .timeline-date,
+[data-theme="orange-candy"] .project-meta-item span,
+[data-theme="orange-candy"] .lab-mini-tag,
+[data-theme="orange-candy"] .work-tags span,
+[data-theme="orange-candy"] .device-url,
+[data-theme="orange-candy"] .nav-links a,
+[data-theme="orange-candy"] .project-next-label,
+[data-theme="orange-candy"] .work-cta,
+[data-theme="orange-candy"] .project-back,
+[data-theme="orange-candy"] .footer {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+[data-theme="orange-candy"] .hero-eyebrow,
+[data-theme="orange-candy"] .section-tag {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ---------- shape reset: sharp corners, no rotation ---------- */
+[data-theme="orange-candy"] .hero-polaroid,
+[data-theme="orange-candy"] .project-hero-polaroid,
+[data-theme="orange-candy"] .about-card,
+[data-theme="orange-candy"] .work-item-media,
+[data-theme="orange-candy"] .work-media-inner,
+[data-theme="orange-candy"] .lab-mini-card,
+[data-theme="orange-candy"] .sticky-note,
+[data-theme="orange-candy"] .about-stat-float,
+[data-theme="orange-candy"] .device-frame-bar,
+[data-theme="orange-candy"] .device-frame-screen,
+[data-theme="orange-candy"] .project-cover,
+[data-theme="orange-candy"] .project-gallery-item,
+[data-theme="orange-candy"] .btn,
+[data-theme="orange-candy"] .nav-cta {
+  border-radius: 0 !important;
+}
+[data-theme="orange-candy"] .hero-polaroid,
+[data-theme="orange-candy"] .project-hero-polaroid,
+[data-theme="orange-candy"] .about-card,
+[data-theme="orange-candy"] .about-card:hover,
+[data-theme="orange-candy"] .work-item-media,
+[data-theme="orange-candy"] .work-item:nth-child(4n+1) .work-item-media,
+[data-theme="orange-candy"] .work-item:nth-child(4n+2) .work-item-media,
+[data-theme="orange-candy"] .work-item:nth-child(4n+3) .work-item-media,
+[data-theme="orange-candy"] .work-item:nth-child(4n+4) .work-item-media,
+[data-theme="orange-candy"] .work-item:hover .work-item-media,
+[data-theme="orange-candy"] .lab-mini-card:nth-child(1),
+[data-theme="orange-candy"] .lab-mini-card:nth-child(2),
+[data-theme="orange-candy"] .lab-mini-card:nth-child(3),
+[data-theme="orange-candy"] .lab-mini-card:hover,
+[data-theme="orange-candy"] .sticky-note,
+[data-theme="orange-candy"] .sticky-note:hover,
+[data-theme="orange-candy"] .rot-1,
+[data-theme="orange-candy"] .rot-2,
+[data-theme="orange-candy"] .rot-3,
+[data-theme="orange-candy"] .rot-4,
+[data-theme="orange-candy"] .about-stat-1,
+[data-theme="orange-candy"] .about-stat-2 {
+  transform: none;
+  animation: none;
+}
+[data-theme="orange-candy"] .about-tags span,
+[data-theme="orange-candy"] .work-tags span {
+  border-radius: 0;
+}
+[data-theme="orange-candy"] .about-tags span {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+[data-theme="orange-candy"] .about-tags span:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ---------- hard offset shadows + light borders on dark cards ---------- */
+[data-theme="orange-candy"] .hero-polaroid,
+[data-theme="orange-candy"] .project-hero-polaroid,
+[data-theme="orange-candy"] .about-card,
+[data-theme="orange-candy"] .work-item-media,
+[data-theme="orange-candy"] .lab-mini-card,
+[data-theme="orange-candy"] .sticky-note,
+[data-theme="orange-candy"] .about-stat-float,
+[data-theme="orange-candy"] .device-frame-bar,
+[data-theme="orange-candy"] .device-frame-screen,
+[data-theme="orange-candy"] .project-cover,
+[data-theme="orange-candy"] .project-gallery-item {
+  border: 2px solid var(--border-color);
+  box-shadow: var(--wb-shadow);
+  background-color: var(--card-bg);
+}
+[data-theme="orange-candy"] .paper-cream,
+[data-theme="orange-candy"] .paper-white,
+[data-theme="orange-candy"] .paper-kraft,
+[data-theme="orange-candy"] .paper-yellow {
+  background: var(--card-bg);
+}
+[data-theme="orange-candy"] .lab-mini-card:nth-child(2n) { background: var(--wb-bg-soft); }
+
+/* ---------- buttons ---------- */
+[data-theme="orange-candy"] .btn,
+[data-theme="orange-candy"] .nav-cta {
+  border: 2px solid var(--border-color);
+  box-shadow: var(--wb-shadow);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+[data-theme="orange-candy"] .btn-primary {
+  background: var(--primary);
+  color: #000000;
+  box-shadow: var(--wb-shadow);
+}
+[data-theme="orange-candy"] .btn-ghost { background: var(--card-bg); color: var(--text-primary); }
+[data-theme="orange-candy"] .btn:hover,
+[data-theme="orange-candy"] .btn-primary:hover,
+[data-theme="orange-candy"] .nav-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(255, 122, 41, 1);
+  background: var(--primary);
+  color: #000000;
+}
+[data-theme="orange-candy"] .btn:active,
+[data-theme="orange-candy"] .nav-cta:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(255, 122, 41, 1);
+}
+
+/* ---------- nav ---------- */
+[data-theme="orange-candy"] .nav {
+  border-bottom: 3px solid var(--border-color);
+  background: var(--bg);
+}
+[data-theme="orange-candy"] .nav.scrolled {
+  background: var(--bg);
+  backdrop-filter: none;
+}
+[data-theme="orange-candy"] .nav-links a { color: var(--text-secondary); }
+[data-theme="orange-candy"] .theme-switcher {
+  font-family: var(--font-mono);
+  border: 2px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  padding: 6px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* ---------- sections ---------- */
+[data-theme="orange-candy"] .about,
+[data-theme="orange-candy"] .prototype {
+  background: var(--wb-bg-soft);
+}
+[data-theme="orange-candy"] .contact { background: var(--bg-hero); }
+[data-theme="orange-candy"] .contact::before,
+[data-theme="orange-candy"] .contact::after {
+  display: none;
+}
+
+/* ---------- name marquee -> candy ticker ---------- */
+[data-theme="orange-candy"] .name-marquee {
+  background: var(--wb-bg-soft);
+  border-top: none;
+  border-bottom: none;
+}
+[data-theme="orange-candy"] .name-marquee-track span {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0;
+}
+[data-theme="orange-candy"] .name-marquee-track span:nth-child(odd),
+[data-theme="orange-candy"] .name-marquee-track span:nth-child(even) {
+  color: var(--primary);
+}
+
+/* ---------- misc ---------- */
+[data-theme="orange-candy"] .work-media-badge {
+  border-radius: 0;
+  border: 2px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text-primary);
+}
+[data-theme="orange-candy"] .work-item:hover .work-media-badge {
+  background: var(--primary);
+  color: #000000;
+  border-color: var(--primary);
+}
+[data-theme="orange-candy"] .about-photo-placeholder {
+  border-radius: 0;
+  background: var(--primary);
+  color: #000000;
+}

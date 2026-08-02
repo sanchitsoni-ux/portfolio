@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Ipsum — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Project Ipsum — a design system overhaul case study by Sanchit Soni." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--yellow-rgb), 0.7);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>02 — Design Systems</span>
+        <h1 class="project-hero-title" data-reveal>Project <em>Ipsum</em></h1>
+        <p class="section-desc" data-reveal>Rebuilding the component library from the ground up — lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Design Systems Lead</strong></div>
+          <div class="project-meta-item"><span>Timeline</span><strong>9 months, lorem ipsum</strong></div>
+          <div class="project-meta-item"><span>Tools</span><strong>Figma, Tokens Studio</strong></div>
+          <div class="project-meta-item"><span>Platform</span><strong>Web &amp; B2B Suite</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover grad-2" data-parallax data-speed="0.06"></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Challenge</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <strong>Ut enim ad minim veniam</strong>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>180+</strong><span>components shipped, lorem</span></div>
+      <div class="project-stat"><strong>67%</strong><span>reduction in design debt</span></div>
+      <div class="project-stat"><strong>14</strong><span>product teams adopted, ipsum</span></div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item grad-3" data-hover></div>
+      <div class="project-gallery-item grad-4" data-hover></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Process</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        </div>
+      </div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Outcome</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="prototype" id="prototype">
+      <div class="section-head">
+        <span class="section-tag" data-reveal>Live Prototype</span>
+        <h2 class="section-title" data-reveal>Try it, lorem ipsum</h2>
+      </div>
+
+      <div class="device-frame" data-parallax data-speed="0.05">
+        <div class="device-frame-bar">
+          <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+          <div class="device-url">figma.com/proto/project-ipsum</div>
+        </div>
+        <div class="device-frame-screen">
+          <iframe id="protoFrame" class="proto-iframe" src="about:blank" title="Embedded prototype placeholder" loading="lazy"></iframe>
+          <div class="proto-placeholder">
+            <div class="proto-placeholder-orb"></div>
+            <p>Lorem ipsum interactive prototype embed placeholder</p>
+            <span>Drop a Figma / Framer / live URL here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a href="project-dolor.html" class="project-next" data-hover>
+      <span class="project-next-label">Next Project</span>
+      <span class="project-next-title">
+        Project Dolor
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
