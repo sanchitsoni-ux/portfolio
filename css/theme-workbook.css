@@ -37,6 +37,7 @@
   background-image: none;
   cursor: auto;
   font-weight: 400;
+  font-family: var(--font-mono);
 }
 [data-theme="workbook"] .cursor-dot,
 [data-theme="workbook"] .cursor-ring,
@@ -77,7 +78,7 @@
   padding: 0 6px;
 }
 [data-theme="workbook"] .project-hero-title em,
-[data-theme="workbook"] .work-item:hover h3 {
+[data-theme="workbook"] .work-tile:hover h3 {
   font-style: normal;
   text-decoration: underline;
   text-decoration-color: var(--primary);
@@ -86,15 +87,13 @@
 }
 [data-theme="workbook"] .hero-eyebrow,
 [data-theme="workbook"] .section-tag,
-[data-theme="workbook"] .work-index,
 [data-theme="workbook"] .timeline-date,
 [data-theme="workbook"] .project-meta-item span,
 [data-theme="workbook"] .lab-mini-tag,
-[data-theme="workbook"] .work-tags span,
+[data-theme="workbook"] .work-tile-mark,
 [data-theme="workbook"] .device-url,
 [data-theme="workbook"] .nav-links a,
 [data-theme="workbook"] .project-next-label,
-[data-theme="workbook"] .work-cta,
 [data-theme="workbook"] .project-back,
 [data-theme="workbook"] .footer {
   font-family: var(--font-mono);
@@ -110,8 +109,7 @@
 [data-theme="workbook"] .hero-polaroid,
 [data-theme="workbook"] .project-hero-polaroid,
 [data-theme="workbook"] .about-card,
-[data-theme="workbook"] .work-item-media,
-[data-theme="workbook"] .work-media-inner,
+[data-theme="workbook"] .work-tile-media,
 [data-theme="workbook"] .lab-mini-card,
 [data-theme="workbook"] .sticky-note,
 [data-theme="workbook"] .about-stat-float,
@@ -127,12 +125,6 @@
 [data-theme="workbook"] .project-hero-polaroid,
 [data-theme="workbook"] .about-card,
 [data-theme="workbook"] .about-card:hover,
-[data-theme="workbook"] .work-item-media,
-[data-theme="workbook"] .work-item:nth-child(4n+1) .work-item-media,
-[data-theme="workbook"] .work-item:nth-child(4n+2) .work-item-media,
-[data-theme="workbook"] .work-item:nth-child(4n+3) .work-item-media,
-[data-theme="workbook"] .work-item:nth-child(4n+4) .work-item-media,
-[data-theme="workbook"] .work-item:hover .work-item-media,
 [data-theme="workbook"] .lab-mini-card:nth-child(1),
 [data-theme="workbook"] .lab-mini-card:nth-child(2),
 [data-theme="workbook"] .lab-mini-card:nth-child(3),
@@ -148,8 +140,7 @@
   transform: none;
   animation: none;
 }
-[data-theme="workbook"] .about-tags span,
-[data-theme="workbook"] .work-tags span {
+[data-theme="workbook"] .about-tags span {
   border-radius: 0;
 }
 
@@ -157,7 +148,6 @@
 [data-theme="workbook"] .hero-polaroid,
 [data-theme="workbook"] .project-hero-polaroid,
 [data-theme="workbook"] .about-card,
-[data-theme="workbook"] .work-item-media,
 [data-theme="workbook"] .lab-mini-card,
 [data-theme="workbook"] .sticky-note,
 [data-theme="workbook"] .about-stat-float,
@@ -168,6 +158,10 @@
   border: 2px solid #0a0a0a;
   box-shadow: var(--wb-shadow);
   background-color: #ffffff;
+}
+[data-theme="workbook"] .work-tile-media {
+  border: 2px solid #0a0a0a;
+  box-shadow: var(--wb-shadow);
 }
 [data-theme="workbook"] .paper-cream,
 [data-theme="workbook"] .paper-white,
@@ -253,14 +247,6 @@
 }
 
 /* ---------- misc ---------- */
-[data-theme="workbook"] .work-media-badge {
-  border-radius: 0;
-  border: 2px solid #0a0a0a;
-}
-[data-theme="workbook"] .work-item:hover .work-media-badge {
-  background: var(--primary);
-  color: #0a0a0a;
-}
 [data-theme="workbook"] .about-photo-placeholder {
   border-radius: 0;
   background: var(--primary);

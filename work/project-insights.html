@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI-Powered Insights — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI-Powered Insights — an anomaly-detection agent surfacing meaningful, actionable insights inside QuickBooks Online reports." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--yellow-rgb), 0.65);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>AI Agents — QuickBooks Online</span>
+        <h1 class="project-hero-title" data-reveal>AI-Powered <em>Insights</em></h1>
+        <p class="section-desc" data-reveal>Customers sit on financial signals across profit and loss, revenue, cost of goods sold, taxes, and expenses — far more than anyone can monitor by hand. AI-Powered Insights is an anomaly-detection agent that watches all of it and surfaces only what's actually worth a customer's attention, directly inside QuickBooks Online reports.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
+          <div class="project-meta-item"><span>Product</span><strong>QuickBooks Online</strong></div>
+          <div class="project-meta-item"><span>Platform</span><strong>Web &amp; mobile</strong></div>
+          <div class="project-meta-item"><span>Status</span><strong>Live — 1M+ users/mo</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The project goal was to work out an insights strategy first, then partner with independent execution teams to ship it. AI-powered insights live inside QuickBooks Online reports — profit and loss, cash reports, balance sheet — and the moment we detect an anomaly, we surface it right there. A customer can click into it, understand what happened, and see what to do about it.</p>
+          <p>The underlying problem is scale: any given business is sitting on financial signals across profit and loss, revenue, cost of goods sold, taxes, and expenses. Monitoring all of that by hand is cumbersome to the point of impossible, so the bet was an AI agent that does the monitoring and only surfaces what's actually worth a customer's attention.</p>
+          <p>Success wasn't just usage — we defined it against customer effort score (CES) on reports, plus harder signals like how many edits books needed after close, how often books had to be reopened, and how much time went into preparing and revising them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Mapping the Landscape</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The work started as broad strategy — mapping every touchpoint and entry point where an AI-powered insight could plausibly show up across the product, then narrowing from there.</p>
+          <p>Rather than spec everything up front, I built a prototype and used it to rapidly generate a wide array of explorations, each one representing a different touchpoint or entry point for an insight. That prototype — and the AI-assisted workflow behind it — became the fastest way to get real options in front of people instead of talking about them abstractly.</p>
+          <p>Those explorations went through rapid design crits, design-leadership shareouts, and working sessions with engineering and PM, alongside in-depth customer research with a dedicated researcher. Two directions consistently aligned with both user need and what engineering was already thinking about.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Insights on Reports</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The first shipped idea put insights directly on reports — specifically profit and loss and balance sheet. Profit-and-loss-related reports account for roughly half of all customer report views, so it was the highest-leverage place to start.</p>
+          <p>The first version surfaced insights in a popover. We soft-launched it to 10% of customers, and voice-of-customer feedback was blunt: the popover clipped and covered the report underneath, and people didn't want that — even though it sat close to the line item it was explaining. We shipped a fast follow that moved insights into a side panel instead, and followed that with a resolve state so a customer could act on an insight without leaving the flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Expanding to Mobile</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>A separate, leadership-driven push was mobile engagement. Our small-and-medium-business customers skew heavily mobile in general, but historically under-use QuickBooks there. The broader bet was an "Intuit Intelligence" experience — a conversational surface living inside QuickBooks that a customer could ask anything financial.</p>
+          <p>I joined a cross-functional design sprint with senior designers from across the product to explore what an insight looks like on mobile: tap an insight, land inside Intelligence, and go back and forth until the anomaly and the fix are both clear — "your revenue is dropping," "your vendor service fee is too high," and concrete steps to resolve it.</p>
+          <p>A meaningful part of this sprint's speed came from an AI-native workflow — using Claude to draft and iterate the conversational narratives quickly, then tuning them until they matched Intuit's voice and tone, rather than hand-writing every conversational branch from scratch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>1.1M+</strong><span>unique users reached / month</span></div>
+      <div class="project-stat"><strong>90%</strong><span>of eligible viewers see an insight</span></div>
+      <div class="project-stat"><strong>34%</strong><span>next-month retention</span></div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "AI-Powered Insights went from a concept to one of QuickBooks' most-used AI-driven features in under 12 months."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Impact</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>AI-Powered Insights went from 100 users in April 2025 to a core engagement surface reaching over a million users a month — 900K to 1.1M unique users exposed every month, with roughly 500K companies a week interacting with an insight in-report. January 2026 was the peak so far: 1.13M users reached and 125K insight clicks, the strongest engagement since launch.</p>
+          <p>Of the customers eligible to see one, 9 in 10 now get an AI insight surfaced to them, and 1 in 6 open it. About 39% of people who open an insight come back and open another — a sign this reads as a habit rather than a novelty click — and 34% of users are still engaging a month later, with more than a quarter still active after three months.</p>
+          <p>The insights themselves are catching real, material findings customers act on — a 245% jump in GST/HST payable worth $52K, and a 408% expense spike worth $27.8K, among others.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>What's Next</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Two directions are active now. The first is giving customers control over which insights they actually want. A typical profit-and-loss report can run to hundreds of line items — internet, licensing, permits, insurance, and cost of goods sold alone can be a hundred more — and research made clear that every business only really cares about a handful of them. A construction business wants anomalies on building materials; someone else only wants their travel expenses watched. The design for letting customers configure what they're monitored on is finished and ready to build.</p>
+          <p>The second is a dedicated insights review page for accountants, where AI doesn't just flag a line item but helps resolve it — reconciliation, removing duplicate entries, adding missing expenses or receipts — so accountants can close books faster, which is one of their biggest recurring pain points.</p>
+          <p>Longer term, the direction is next-best-action: research keeps surfacing that customers want this done for them, not just flagged for them — which is exactly the thinking behind the accountant book-review work above.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

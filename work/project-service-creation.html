@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Paved-Path Service Creation — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI Paved-Path Service Creation — a guided, AI-assisted way for developers to create and configure new services, from a design-led bet to a CTO-approved FY26 roadmap item." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--yellow-rgb), 0.65);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>Platform / DevX — Intuit Developer Portal</span>
+        <h1 class="project-hero-title" data-reveal>AI Paved-Path <em>Service Creation</em></h1>
+        <p class="section-desc" data-reveal>A guided, AI-assisted way for developers to create and configure new services — from a design-led bet with no product roadmap behind it, to a CTO-approved part of Intuit's FY26 strategy.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
+          <div class="project-meta-item"><span>Timeline</span><strong>Q3 FY24 – Q1 FY25</strong></div>
+          <div class="project-meta-item"><span>Team</span><strong>+ Sr designer, content designer</strong></div>
+          <div class="project-meta-item"><span>Status</span><strong>CTO-approved for FY26</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover" data-parallax data-speed="0.06">
+        <img src="../images/service-creation/svc-devportal-entry.jpg" alt="Developer Portal home with a 'Create service asset via Intuit Assist' Paved Road card" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Backend infrastructure is usually divided into smaller pieces — code, APIs, databases — deployed independently, like LEGO blocks. Those blocks come together to build an entire application: TurboTax has one login lego, one payment lego, one tax-form lego, and so on. Knowing which blocks to snap together, and in what order, was almost entirely tribal knowledge.</p>
+          <p>The bet was that AI could change that: create and deploy services on a developer's behalf, then help them assemble complex applications through guided, configuration-driven experiences instead of hand-built plumbing every time.</p>
+          <p>The business case was velocity. Dev velocity was running about 30% under target, and velocity and PR-merge rate are the two clearest signals of whether engineering is actually hitting production targets — which flows straight through to revenue and how fast the org can innovate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Research &amp; Reframing</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>It started with user interviews mapping developers' actual end-to-end flow for standing up a new service — where the bottlenecks and pain points really were, not where we assumed they'd be. That fed directly into vision setting and alignment on what to build next.</p>
+          <p>The clearest reframe came from an analogy: it's like trying to build a LEGO train. You know you want a train. There are instructions for building the suspension, and instructions for the engine — but nothing for the whole train. Developers knew the north-star goal; they didn't know how to get there. That gap, not any single missing feature, was the actual problem.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover style="grid-column: 1 / -1; aspect-ratio: 16/9;"><img src="../images/service-creation/svc-journey-mapping.jpg" alt="Current-state journey mapping board for Day 0 and Day 1 of standing up a new service" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Finding the Right Shape</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The first concept proposed a chat interface in place of a form-filling UI, paired with a guided experience for doing configuration. Presenting that demo to the GenAI Web Plugin development team and PM led to an exploration of a full chat assistant — but further testing showed an immersive chat panel wasn't the right shape for this task. The alternative that stuck was a micro-assist embedded directly in the creation flow: contextual help exactly where a developer was stuck, instead of a separate conversation to context-switch into.</p>
+          <p>A third round of demos, this time with the Intuit Kubernetes Services dev team, surfaced a gap the concept hadn't covered — developers often work multiple configuration goals at once — which led to adding a dedicated tab for managing and updating several goals in parallel. From there, the guided-workflow components themselves got built out: steps that could be marked complete, AI-generated actions with one-click authorization, and a live "connecting" state that confirms when two services are actually wired together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-concept-chat-assistant.jpg" alt="Early concept: an immersive Intuit Assist chat panel for service configuration" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-concept-micro-assist.jpg" alt="Micro-assist concept: contextual Intuit Assist help embedded in the New Web Plugin creation flow" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-guided-workflow-states.jpg" alt="Guided workflow component states — create, AI generated, connecting, task complete" loading="lazy" /></div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "Good job guys. I want you to show this at GED. Can you work with Avni to identify a developer to build this?" — Director of Product
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>From Demo to Roadmap</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>That director-level greenlight sent the concept to Global Engineering Days, Intuit's internal hackathon — where it generated enough interest from the developer community to justify more engineering demos. A round of concept testing across multiple teams surfaced edge cases, additional use cases, and constraints the earlier rounds had missed. One developer put it simply: "I appreciate the guided experience. Now I don't need to worry how to navigate through."</p>
+          <p>From there it was about tying the work to something bigger — a design workshop with the Horizons and Apex design groups connected the guided workflow to a broader platform experience, and more prototyping produced a real start-to-finish journey instead of a handful of disconnected screens. Contributing demos, the research deck, and the underlying thinking to a strategic paper turned all of it into a pitch a CTO could actually approve.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-ged-brainstorm.jpg" alt="Global Engineering Days brainstorming board — sketches and voting from the design team" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-e2e-prototype.jpg" alt="Prototype of the end-to-end service creation journey, from Developer Portal home to a guided task" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Outcome</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The project got CTO-level approval for FY26 strategic intake. Guided, AI-assisted service creation is now part of the actual product roadmap — not just a design team's side bet — and teams are building POCs and MVPs off the concepts from this work.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

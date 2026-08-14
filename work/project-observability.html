@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI-Native Observability — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI-Native Observability — designing Intuit's in-house observability platform, from a blank slate to 99.9% uptime and $1.6M in annual savings." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--primary-rgb), 0.6);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>Platform / DevX — Intuit Developer Portal</span>
+        <h1 class="project-hero-title" data-reveal>AI-Native <em>Observability</em></h1>
+        <p class="section-desc" data-reveal>Designing an in-house observability tool, native to Intuit's own infrastructure, to replace a third-party vendor tool costing $1.6M a year — and to get every Intuit app closer to 99.9% uptime.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>E2E design lead</strong></div>
+          <div class="project-meta-item"><span>Timeline</span><strong>Q1 FY22 – Q4 FY23</strong></div>
+          <div class="project-meta-item"><span>Users</span><strong>On-call developers, SREs</strong></div>
+          <div class="project-meta-item"><span>Status</span><strong>Live — 2 DevX awards</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover" data-parallax data-speed="0.06">
+        <img src="../images/observability/observability-cover.jpg" alt="Final Observability concept — Actions & Insights panel with Intuit Assist chat, dependency graph, and platform health" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The goal was to create observability tools for debugging incidents — tools that could bring 99+% uptime to TurboTax, QuickBooks Online, and every other Intuit app, and cut mean-time-to-detect, identify, and repair by 20% or more. The forcing function behind all of it: decommissioning AppDynamics, a state-of-the-art external tool that was costing Intuit over $1.6M a year in licensing.</p>
+          <p>Primary users were Intuit developers who were "on-call"; secondary users were the Intuit Operations Center, the VP of Engineering, and site reliability engineers. As the first and only design lead for Operations, this was mine end-to-end — a product manager, a director of PM, and 20+ developers as stakeholders, but almost no Design for Delight culture to lean on, no dedicated researcher or visual designer, and a short runway to launch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Discover: Research &amp; Workshops</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The process followed Intuit's own Design for Delight triple-diamond: discover the problem, explore the solution, deliver the experience. It started with Follow Me Homes — sitting with developers to watch how they actually debugged incidents — which surfaced their real pain points and the specific data they wanted to see. Next steps were about getting stakeholders aligned on a shared vision by putting those insights in front of them and brainstorming solutions together.</p>
+          <p>From there, JTBD, How-Might-We, and RICE prioritization workshops aligned product, design, and engineering behind a single vision: a single pane of glass that takes a developer from incident alert straight through to debugging.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/observability/observability-research-fmhs.jpg" alt="Follow Me Home research boards mapping user pain points and needs" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/observability/observability-workshops.jpg" alt="JTBD, How Might We, and RICE prioritization workshop boards" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Explore: Three Rounds of Concepts</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Concept 1, Realtime Analytics, leaned almost entirely on an anomaly-score trendline. Both leadership and users pushed back — a single trendline wasn't enough signal to understand what was actually happening in the system, and people needed links out to other dashboards for more context.</p>
+          <p>Concept 2, Observability 1.0, answered that by adding more platform health data. The feedback loop kept going: Concept 3, Observability 2.0, pushed further and layered in more insight directly into the dashboard, so developers didn't have to go hunting for context that should have been sitting right in front of them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="project-gallery-item" data-hover><img src="../images/observability/observability-concept1-realtime.jpg" alt="Concept 1: Realtime Analytics, anomaly score trendline with dependency map" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/observability/observability-concept2-v1.jpg" alt="Concept 2: Observability 1.0, adding platform health signals" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/observability/observability-concept3-v2.jpg" alt="Concept 3: Observability 2.0, layering more insight into the dashboard" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>A Blank Canvas</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>To pressure-test the direction, I ran a participatory design exercise — handed developers a blank canvas and a set of building blocks and asked two questions: "If you had a magic wand and anything is possible, what would you build?" and "What would really help you cut down MTTR in half?"</p>
+          <p>4 of 5 participants wanted something highly specific to their own workflow rather than a generic view; 3 of 5 wanted change-management context surfaced alongside the alert; 3 of 5 wanted incident details built into the dashboard itself, not a click away. That's what shaped the final concept.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover style="grid-column: 1 / -1; aspect-ratio: 16/9;"><img src="../images/observability/observability-participatory-design.jpg" alt="Participatory design exercise boards — what developers said they'd build with a magic wand" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Final Concept</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The final concept added high-level actions and insights, backed by a chat assistant, so a developer could triage an issue in seconds instead of digging across six tabs by hand — ask "who owns this asset," "is this a platform issue," or "how do I use the dependency graph," and get an answer inline instead of pinging someone.</p>
+          <p>Concept testing validated the Actions &amp; Insights panel and the runbook steps strongly — developers responded well to both. The dependency graph and golden signals read more mixed, so those kept iterating past this round.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover style="grid-column: 1 / -1; aspect-ratio: 16/9;"><img src="../images/observability/observability-traffic-analysis.jpg" alt="Traffic analysis view with Intuit Assist copilot walking through runbook steps" loading="lazy" /></div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>99.9%</strong><span>uptime, up from 99.83%</span></div>
+      <div class="project-stat"><strong>$1.6M</strong><span>saved decommissioning AppDynamics</span></div>
+      <div class="project-stat"><strong>+11</strong><span>NPS points (38 → 49)</span></div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "From 'Hey, can I get that UI by EOW?' to 'What's our vision?' — that shift in how stakeholders saw the role defined this project as much as any single screen did."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Impact</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Beyond the headline uptime and cost numbers, mean-time-to-repair improved 20% for SBSEG, and adoption of the Observability page grew 80%. The work went on to win two internal honors — a DevX Excellence Award and a special recognition.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Lessons</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>There was almost no Design for Delight culture in Operations when this started — it had been run like a startup. I built it by running Follow Me Homes, showing customer data, introducing the product process, running workshops, and having a lot of buy-in conversations, until "strong D4D culture" was actually true instead of aspirational.</p>
+          <p>Quarterly deliverable timelines didn't originally leave room for user research, so early on I squeezed research into whatever time I had. Once stakeholders saw what it surfaced, they started giving it real breathing room — to the point a PM manager later asked, unprompted, "did you do FMHs on this already? We need to test it before we build it." Getting FMH participants was its own challenge given how packed developers' schedules were; building direct relationships with teams like QBO, SBSEG-CX3, IDX, and ID360 — plus some friendly persistence on Slack — made it far easier going forward, and gave product and design a direct line to customer feedback.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

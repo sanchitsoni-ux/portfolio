@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Harp — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Harp — re-framing an open-source machine learning library's API documentation and information architecture." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--primary-rgb), 0.6);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>APIs — Developer Experience</span>
+        <h1 class="project-hero-title" data-reveal>Harp: Re-framing <em>API Docs</em></h1>
+        <p class="section-desc" data-reveal>Restructuring the documentation for Harp, an open-source library data scientists and researchers use to run machine learning algorithms on large, scalable datasets — installation guides, algorithm diagrams, code snippets, and examples included.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>IA &amp; documentation design</strong></div>
+          <div class="project-meta-item"><span>Method</span><strong>Co-design workshops</strong></div>
+          <div class="project-meta-item"><span>Tags</span><strong>APIs, Developer Experience</strong></div>
+          <div class="project-meta-item"><span>Status</span><strong>Intel-funded</strong></div>
+        </div>
+
+        <a href="https://dsc-spidal.github.io/harp/" target="_blank" rel="noopener" class="project-live-link" data-hover data-reveal>
+          View the live site
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover" data-parallax data-speed="0.06">
+        <img src="../images/harp/harp-08.png" alt="Harp homepage — high performance machine learning tools for achieving your goals faster" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>I restructured the entire documentation for Harp, an open-source library for data scientists and researchers to run their machine learning algorithms on large, scalable datasets. It involves a lot of complex components — installation guides, graphical vectors, algorithms, large code snippets, and examples — all of which the existing docs buried rather than surfaced.</p>
+          <p>The goal was simple to state and hard to do: make Harp's library more usable and developer-friendly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Approach</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The work started with understanding how data scientists and developers actually work — through co-design sessions, by attending data workshops, and by watching how they used and implemented code day to day.</p>
+          <p>From there, the focus shifted to documentation UX: restructuring the information architecture, redesigning the vector diagrams that explain each algorithm, and restructuring the code snippets themselves.</p>
+          <p>The website experience needed work too — search and micro-interactions like a copy-to-clipboard button, packaged downloads, and proper versioning with release notes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Phase 1 — Co-design</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>I personally ran a workshop with researchers at IU's Intelligent Systems to work out the documentation's structure and figure out which component needed to go where, alongside user interviews on what data scientists and developers actually care about when using a library.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-01.jpeg" alt="Whiteboard card-sorting session mapping Harp's documentation structure" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-02.jpeg" alt="Whiteboard co-design workshop with sticky notes grouping documentation topics" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-03.jpeg" alt="Whiteboard workshop notes on Harp documentation sections" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-04.jpeg" alt="Whiteboard workshop notes continued, algorithm and example groupings" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Restructuring the IA</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The workshop findings turned into a clean two-track hierarchy — documentation for <strong>users who want to use the library</strong> and documentation for <strong>contributors who want to contribute to Harp</strong> — with getting-started paths, use cases, and contribution guides hanging off each branch.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-06.jpeg" alt="Two-track information architecture diagram: for users vs. for contributors" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-05.png" alt="Digital sitemap board restructuring the documentation's content inventory" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-10.png" alt="Early wireframe of the restructured Harp documentation site" loading="lazy" /></div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "Still working on v2.0, where we'll add more features and make it more visually appealing. But first, got to get the structure right."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Redesigned Docs</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Each algorithm page was rebuilt around a consistent Problem / Demo / Procedure / Code Instructions structure, so a developer could scan straight to the part they needed instead of reading linearly through prose. The final nav mirrors the restructured IA — nested, scannable, and organized around what a visitor is trying to do rather than how the library's internals happen to be organized.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-09.png" alt="Redesigned K-means algorithm page with Problem, Demo, Procedure, and Code Instructions tabs" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/harp/harp-07.png" alt="Final restructured documentation navigation, nested by user vs. contributor path" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Impact</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The revamped tool is now used widely by data scientists across universities. Harp as a project is now funded by Intel, which has meant more resources to keep developing it further.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

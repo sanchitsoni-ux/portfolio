@@ -17,11 +17,23 @@
 
   function navLinks(base) {
     return [
-      { href: base + '#work', label: 'Work' },
-      { href: base + '#about', label: 'About' },
-      { href: base + '#prototype', label: 'Lab' },
-      { href: base + '#experience', label: 'Experience' }
+      { href: base + '#work', label: 'Work' }
     ];
+  }
+
+  function taglineHTML() {
+    return (
+      '<p class="nav-tagline">I design for ' +
+      '<span class="dynamic-word-wrap">' +
+      '<span class="dynamic-word-sizer" aria-hidden="true">' +
+      '<span>Enterprise</span>' +
+      '<span>Business Intelligence</span>' +
+      '<span>Developer Tools</span>' +
+      '</span>' +
+      '<span class="dynamic-word" id="dynamicWord">Enterprise</span>' +
+      '</span>' +
+      '</p>'
+    );
   }
 
   function themeSwitcherHTML(idSuffix) {
@@ -48,10 +60,12 @@
       .join('\n      ');
     return (
       '<header class="nav">\n' +
-      '  <a href="' + logoHref + '" class="nav-logo">Sanchit Soni<span>.</span></a>\n' +
+      '  <div class="nav-brand">\n' +
+      '    <a href="' + logoHref + '" class="nav-logo">Sanchit Soni<span>.</span></a>\n' +
+      '    ' + taglineHTML() + '\n' +
+      '  </div>\n' +
       '  <nav class="nav-links">\n' +
       '    ' + links + '\n' +
-      '    <a href="' + base + '#contact" data-hover class="nav-cta">Say Hi</a>\n' +
       '    ' + themeSwitcherHTML('Desktop') + '\n' +
       '  </nav>\n' +
       '  <button class="nav-burger" id="navBurger" aria-label="Toggle menu">\n' +
@@ -71,7 +85,6 @@
     return (
       '<div class="mobile-menu" id="mobileMenu">\n' +
       '    ' + links + '\n' +
-      '    <a href="' + base + '#contact">Say Hi</a>\n' +
       '    ' + themeSwitcherHTML('Mobile') + '\n' +
       '  </div>'
     );

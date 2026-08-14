@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Persona Toolkit — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI Persona Toolkit — building a HEXACO-based personality, voice, and color framework for an internal AI assistant." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--accent-rgb), 0.6);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>Framework &amp; Brand — Internal AI</span>
+        <h1 class="project-hero-title" data-reveal>AI Persona <em>Toolkit</em></h1>
+        <p class="section-desc" data-reveal>An internal AI framework — cognitive behavior and brand — used by AI/ML and marketing teams to decide the personality, look and feel, and voice and tone of AI capabilities across the product.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
+          <div class="project-meta-item"><span>Started</span><strong>2020</strong></div>
+          <div class="project-meta-item"><span>Tools</span><strong>Figma</strong></div>
+          <div class="project-meta-item"><span>Tags</span><strong>Framework, Guideline, AI</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover-wrap">
+      <div class="project-cover" data-parallax data-speed="0.06">
+        <img src="../images/ai-persona/color-palette-final.jpg" alt="Final HEXACO-based color palette, primary, secondary, and neutral tones" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The goal was to create an internal AI framework — cognitive behavior plus brand — that internal AI/ML teams and marketing teams could both use to decide the personality of AI capabilities, their look and feel, and their voice and tone.</p>
+          <p>These guidelines needed to determine how the AI assistant interacts with internal stakeholders and end users across multiple touchpoints: in-product assistant, search, GUI, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Process</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The first step was a competitive analysis — looking at IBM Watson, Google Assistant, Amazon's Alexa, and Apple's Siri to see how each established personality established trust and clarity.</p>
+          <p>A personality-behavior toolkit by Austin Beer helped establish a north star for bot personality, the key input for determining overall AI behavior. After that exercise and feedback from senior designers, the work moved to defining personality traits directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/phase1-toolkit.png" alt="Austin Beer's bot personality toolkit used to determine Phase 1 behavior" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-capabilities-phase1.jpg" alt="AI capabilities, Phase 1" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>From OCEAN to HEXACO</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Work started with the OCEAN model — the Big Five personality traits (Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism). Partway through plotting the bot's traits on that spectrum, one question stalled the exercise: <strong>what about honesty — how honest is this bot's personality going to be?</strong></p>
+          <p>OCEAN doesn't account for a degree of honesty, which matters when designing for user trust. That gap led to the HEXACO model instead — the same five dimensions plus a sixth: Honesty-Humility.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-H-honesty.jpg" alt="Honesty-Humility HEXACO trait board" loading="lazy" /><span class="work-tile-mark">H</span></div>
+        <h3>Honesty-Humility</h3>
+        <p>Sincerity, fairness, greed avoidance, modesty. Sincere and loyal versus sly, greedy, boastful.</p>
+      </div>
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-E-emotionality.jpg" alt="Emotionality HEXACO trait board" loading="lazy" /><span class="work-tile-mark">E</span></div>
+        <h3>Emotionality</h3>
+        <p>Fearfulness, anxiety, dependence, sentimentality. Vulnerable and sentimental versus brave, self-assured.</p>
+      </div>
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-X-extroversion.jpg" alt="Extroversion HEXACO trait board" loading="lazy" /><span class="work-tile-mark">X</span></div>
+        <h3>Extroversion</h3>
+        <p>Social self-esteem, boldness, sociability, liveliness. Outgoing and talkative versus shy, reserved.</p>
+      </div>
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-A-agreeableness.jpg" alt="Agreeableness HEXACO trait board" loading="lazy" /><span class="work-tile-mark">A</span></div>
+        <h3>Agreeableness</h3>
+        <p>Forgiveness, gentleness, flexibility, patience. Tolerant and gentle versus quarrelsome, stubborn.</p>
+      </div>
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-C-conscientiousness.jpg" alt="Conscientiousness HEXACO trait board" loading="lazy" /><span class="work-tile-mark">C</span></div>
+        <h3>Conscientiousness</h3>
+        <p>Organization, diligence, perfectionism, prudence. Disciplined and precise versus sloppy, reckless.</p>
+      </div>
+      <div class="work-tile" data-hover>
+        <div class="work-tile-media has-photo"><img src="../images/ai-persona/ai-persona-hexaco-O-openness.jpg" alt="Openness HEXACO trait board" loading="lazy" /><span class="work-tile-mark">O</span></div>
+        <h3>Openness</h3>
+        <p>Aesthetic appreciation, inquisitiveness, creativity. Intellectual and creative versus conventional.</p>
+      </div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "It makes business sense to have a palette of colors for branding AI rather than a monolithic color — every color is perceived differently across countries. A palette scales across global markets and culture."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Color System</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Once the personality model was locked, the work turned to look and feel. Research spanned color psychology and case studies on how psychology and behavior traits link to color, plus a deeper read through <em>The Secret Language of Color</em> — color as science, nature, history, and culture.</p>
+          <p>That research fed a color spectrum mapped directly to the HEXACO scales: the hex codes on either end of each spectrum came from the existing product and branding palette, and the resulting "fused" color for each trait was picked from a palette generator in Figma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/color-case-studies.png" alt="Color psychology case studies referenced during research" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/color-spectrum-hexaco.jpg" alt="Color spectrum mapped to the HEXACO scale" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Values &amp; Voice</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>AI capabilities and values were grounded in the company's own values, so the assistant's behavior stayed consistent with how the business already presented itself. Voice and tone followed the same logic — built on top of the product design team's existing voice and tone guidelines rather than inventing a separate one.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-why-exist.jpg" alt="Why would this exist? The point of its existence, based on business values" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-values.jpg" alt="Values for the AI bot, based on the company's own values" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-voice-tone.jpg" alt="Voice and tone for the AI bot, based on Product design's voice and tone" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Representation</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The framework also had to take a position on representation: whether the assistant should read as gendered, and how accent, race, and geography should — or shouldn't — factor into its voice. Those questions shaped the guidelines as much as the personality model did.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-representation-gender.jpg" alt="Discussion of whether the AI assistant should read as gendered" loading="lazy" /></div>
+      <div class="project-gallery-item" data-hover><img src="../images/ai-persona/ai-persona-accent-race-geo.jpg" alt="Discussion of accent, race, and geography in the assistant's voice" loading="lazy" /></div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Looking Forward</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>With the personality and color system locked, marketing and branding took over building a final logo and supporting collateral. The next building block on the roadmap is a conversation library — a pattern language for how the assistant actually talks, informed by <a href="https://designguidelines.withgoogle.com/conversation/style-guide/language.html" target="_blank" rel="noopener" data-hover>Google's conversation design style guide</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
