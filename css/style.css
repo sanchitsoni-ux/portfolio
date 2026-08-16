@@ -144,9 +144,10 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   padding: 29px clamp(20px, 5vw, 64px);
   backdrop-filter: blur(0px);
-  transition: backdrop-filter 0.3s ease, background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+  transition: backdrop-filter 0.3s ease, background 0.3s ease, padding 0.3s ease, border-color 0.3s ease, right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
@@ -156,7 +157,7 @@ img { max-width: 100%; display: block; }
   padding-bottom: 19px;
   border-color: var(--border-color);
 }
-.nav-brand { display: flex; flex-direction: column; gap: 3px; }
+.nav-brand { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-shrink: 1; }
 .nav-logo {
   font-weight: 600;
   font-size: 20px;
@@ -164,21 +165,26 @@ img { max-width: 100%; display: block; }
 }
 .nav-logo span { color: var(--primary); }
 .nav-tagline {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.6;
+  padding-bottom: 2px;
 }
 .nav-tagline .dynamic-word-wrap { font-size: inherit; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 24px;
   font-size: 14px;
   font-weight: 400;
+  flex-shrink: 0;
 }
-.nav-links a { color: var(--text-secondary); position: relative; transition: color 0.25s ease; }
-.nav-links a:hover { color: var(--text-primary); }
-.nav-links a:not(.nav-cta)::after {
+.nav-links a, .theme-switcher-btn { color: var(--text-secondary); position: relative; transition: color 0.25s ease; }
+.nav-links a:hover, .theme-switcher-btn:hover, .theme-switcher-btn[aria-expanded="true"] { color: var(--text-primary); }
+.nav-links a:not(.nav-cta)::after, .theme-switcher-btn::after {
   content: '';
   position: absolute;
   left: 0; bottom: -4px;
@@ -186,7 +192,7 @@ img { max-width: 100%; display: block; }
   background: var(--primary);
   transition: width 0.25s ease;
 }
-.nav-links a:not(.nav-cta):hover::after { width: 100%; }
+.nav-links a:not(.nav-cta):hover::after, .theme-switcher-btn:hover::after, .theme-switcher-btn[aria-expanded="true"]::after { width: 100%; }
 .nav-cta {
   position: relative;
   padding: 9px 18px;
@@ -195,6 +201,49 @@ img { max-width: 100%; display: block; }
   transition: background 0.25s ease;
 }
 .nav-cta:hover { background: rgba(var(--primary-rgb), 0.08); }
+
+/* Theme switcher: a plain "Theme" text control, styled like the Resume /
+   LinkedIn links, that opens a small popup with the three options rather
+   than a native <select> announcing whichever theme happens to be active. */
+.theme-switcher-wrap { position: relative; display: inline-flex; align-items: center; }
+.theme-switcher-btn {
+  font: inherit;
+  font-size: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.theme-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(var(--ink-rgb, 0, 0, 0), 0.14);
+  z-index: 20;
+}
+.theme-popover[hidden] { display: none; }
+.theme-option {
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.theme-option:hover { background: rgba(var(--primary-rgb), 0.06); color: var(--text-primary); }
+.theme-option.active { color: var(--primary); font-weight: 600; }
 
 .nav-burger {
   display: none;
@@ -229,6 +278,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-burger { display: flex; }
+  .nav-tagline { max-width: 70vw; }
 }
 
 /* ============ SECTION HEAD (shared) ============ */
@@ -340,7 +390,7 @@ img { max-width: 100%; display: block; }
   vertical-align: baseline;
 }
 .dynamic-word-sizer { visibility: hidden; display: grid; }
-.dynamic-word-sizer span { grid-row: 1; grid-column: 1; white-space: nowrap; }
+.dynamic-word-sizer span { grid-row: 1; grid-column: 1; white-space: nowrap; font-weight: 600; }
 .dynamic-word {
   position: absolute;
   left: 0; top: 0;
@@ -1090,4 +1140,110 @@ img { max-width: 100%; display: block; }
   .footer { flex-direction: column; gap: 12px; text-align: center; }
   .hero-scroll-cue { display: none; }
   .project-hero { padding-top: 130px; }
+}
+
+/* ============ CASE STUDY SIDE PANEL (prototype pattern) ============
+   True reflow split-view, no overlay: .work-layout is a flex row, the
+   panel grows from 0 to its open width and the work list shrinks to
+   make room — no dimming, no click-catcher, list stays 1-click live. */
+.work-layout { display: flex; align-items: flex-start; }
+.work-layout .work { flex: 1 1 auto; min-width: 0; }
+
+.case-panel {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  flex: 0 0 0px;
+  background: var(--bg);
+  border-left: 3px solid var(--border-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: flex-basis 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+/* Width is driven from JS (case-panel.js) via inline flex-basis, animated
+   by this CSS transition — flex-basis (not width) is what this flex item
+   actually resizes on. Motion is used for the loaded content's entrance
+   instead, where a plain transition can't do a staggered reveal. */
+
+.case-panel-inner { width: var(--case-panel-w, 1040px); }
+
+.case-panel-close {
+  position: sticky;
+  top: 20px;
+  margin: 20px 20px 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg, rgba(255, 255, 255, 0.75));
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 5;
+  flex-shrink: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.case-panel-close:hover { background: var(--primary); color: #fff; transform: rotate(90deg); }
+
+.case-panel-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Case-study content is designed for a full page with a fixed nav; trim it
+   down to fit a narrower, nav-less panel. */
+.case-panel-body .project-hero { padding-top: 8px; }
+.case-panel-body .project-hero-polaroid { transform: none; box-shadow: none; max-width: 100%; }
+.case-panel-body .project-cover-wrap,
+.case-panel-body .mock-frame,
+.case-panel-body .project-carousel,
+.case-panel-body .project-section-grid,
+.case-panel-body .project-gallery,
+.case-panel-body .project-stats,
+.case-panel-body .project-quote,
+.case-panel-body .project-next { max-width: 100%; }
+.case-panel-body .project-section-grid { grid-template-columns: 1fr; gap: 16px; }
+.case-panel-body .project-back { display: none; }
+/* Panel content gets its own entrance animation from Motion (case-panel.js)
+   instead of the page's scroll-triggered reveal, so it shouldn't also
+   carry the base [data-reveal] CSS transition — Motion owns these frames. */
+.case-panel-body [data-reveal] { transition: none; }
+
+/* Work list collapses into a compact, scannable list while the panel is
+   open — thumbnail drops out, but the description stays so each item is
+   still recognizable, not just a bare title. */
+.work-layout.panel-open .work-categories {
+  grid-template-columns: 1fr;
+  max-width: 460px;
+  gap: 40px;
+}
+.work-layout.panel-open .work-category-list { gap: 18px; }
+.work-layout.panel-open .work-tile {
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+.work-layout.panel-open .work-tile:hover { background: rgba(var(--primary-rgb), 0.06); }
+.work-layout.panel-open .work-tile.active-tile { background: rgba(var(--primary-rgb), 0.1); }
+.work-layout.panel-open .work-tile.active-tile h3 { color: var(--primary); }
+.work-layout.panel-open .work-tile-media { display: none; }
+
+@media (max-width: 900px) {
+  .work-layout { flex-direction: column; }
+  .case-panel { position: static; width: 100%; height: 0; border-left: none; border-top: 3px solid var(--border-color); transition: none; }
+  .case-panel-inner { width: 100%; }
+  .work-layout.panel-open .work-categories { max-width: 100%; }
 }

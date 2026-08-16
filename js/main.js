@@ -7,9 +7,17 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    document.querySelectorAll('.theme-switcher').forEach(function (sel) {
-      sel.value = theme;
+    document.querySelectorAll('.theme-option').forEach(function (opt) {
+      opt.setAttribute('aria-checked', opt.dataset.themeValue === theme ? 'true' : 'false');
+      opt.classList.toggle('active', opt.dataset.themeValue === theme);
     });
+  }
+
+  function closeThemePopover(wrap) {
+    var popover = wrap.querySelector('.theme-popover');
+    var btn = wrap.querySelector('.theme-switcher-btn');
+    if (popover) popover.hidden = true;
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
   function initThemeSwitcher() {
@@ -19,12 +27,45 @@
     } catch (e) { /* localStorage unavailable */ }
     applyTheme(stored);
 
-    document.querySelectorAll('.theme-switcher').forEach(function (sel) {
-      sel.addEventListener('change', function () {
-        var next = sel.value;
-        applyTheme(next);
-        try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* ignore */ }
+    var wraps = document.querySelectorAll('.theme-switcher-wrap');
+
+    wraps.forEach(function (wrap) {
+      var btn = wrap.querySelector('.theme-switcher-btn');
+      var popover = wrap.querySelector('.theme-popover');
+      if (!btn || !popover) return;
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var willOpen = popover.hidden;
+        wraps.forEach(closeThemePopover);
+        if (willOpen) {
+          popover.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+        }
       });
+
+      popover.querySelectorAll('.theme-option').forEach(function (opt) {
+        opt.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var next = opt.dataset.themeValue;
+          applyTheme(next);
+          try { localStorage.setItem(THEME_KEY, next); } catch (err) { /* ignore */ }
+          closeThemePopover(wrap);
+        });
+      });
+    });
+
+    // Belt-and-suspenders: close on any click whose target isn't inside
+    // the wrap, rather than relying solely on stopPropagation ordering
+    // above — keeps this correct even if a click somehow reaches here
+    // for a wrap it originated in.
+    document.addEventListener('click', function (e) {
+      wraps.forEach(function (wrap) {
+        if (!wrap.contains(e.target)) closeThemePopover(wrap);
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') wraps.forEach(closeThemePopover);
     });
   }
   initThemeSwitcher();

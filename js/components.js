@@ -16,14 +16,23 @@
   ];
 
   function navLinks(base) {
+    // base is '' on the homepage or the path back to index.html on subpages
+    // (e.g. "../index.html"); strip it down to the root-relative prefix so
+    // links to other top-level pages (like resume.html) resolve correctly.
+    var root = base.replace('index.html', '');
     return [
-      { href: base + '#work', label: 'Work' }
+      { href: root + 'resume.html', label: 'Resume', newTab: true },
+      { href: 'https://www.linkedin.com/in/sanchitsoni18/', label: 'LinkedIn', newTab: true }
     ];
+  }
+
+  function linkAttrs(l) {
+    return l.newTab ? ' target="_blank" rel="noopener"' : '';
   }
 
   function taglineHTML() {
     return (
-      '<p class="nav-tagline">I design for ' +
+      '<p class="nav-tagline">Staff Product Designer @Quickbooks. I love designing for ' +
       '<span class="dynamic-word-wrap">' +
       '<span class="dynamic-word-sizer" aria-hidden="true">' +
       '<span>Enterprise</span>' +
@@ -38,12 +47,19 @@
 
   function themeSwitcherHTML(idSuffix) {
     var options = THEMES.map(function (t) {
-      return '<option value="' + t.value + '">' + t.label + '</option>';
+      return (
+        '<button type="button" class="theme-option" data-theme-value="' + t.value + '" role="menuitemradio">' +
+        t.label +
+        '</button>'
+      );
     }).join('');
     return (
-      '<select id="themeSwitcher' + idSuffix + '" class="theme-switcher" data-hover aria-label="Switch theme">' +
+      '<span class="theme-switcher-wrap">' +
+      '<button type="button" id="themeBtn' + idSuffix + '" class="theme-switcher-btn" data-hover aria-haspopup="true" aria-expanded="false">Theme</button>' +
+      '<div id="themePopover' + idSuffix + '" class="theme-popover" role="menu" hidden>' +
       options +
-      '</select>'
+      '</div>' +
+      '</span>'
     );
   }
 
@@ -55,7 +71,7 @@
     var logoHref = opts.isHome ? '#top' : base;
     var links = navLinks(base)
       .map(function (l) {
-        return '<a href="' + l.href + '" data-hover>' + l.label + '</a>';
+        return '<a href="' + l.href + '" data-hover' + linkAttrs(l) + '>' + l.label + '</a>';
       })
       .join('\n      ');
     return (
@@ -79,7 +95,7 @@
     var base = opts.base || '';
     var links = navLinks(base)
       .map(function (l) {
-        return '<a href="' + l.href + '">' + l.label + '</a>';
+        return '<a href="' + l.href + '"' + linkAttrs(l) + '>' + l.label + '</a>';
       })
       .join('\n    ');
     return (
@@ -93,7 +109,7 @@
   function footerHTML() {
     return (
       '<footer class="footer">\n' +
-      '  <span>© 2026 Sanchit Soni. Lorem ipsum, all rights reserved.</span>\n' +
+      '  <span>© 2026 Sanchit Soni. All rights reserved.</span>\n' +
       '  <a href="#top" data-hover>Back to top ↑</a>\n' +
       '</footer>'
     );

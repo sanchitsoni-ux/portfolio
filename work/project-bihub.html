@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BI Hub Prototyping — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BI Hub Prototyping — a Wizard-of-Oz analytics workspace prototype built to survive more than a scripted demo: cascading cross-business data, a reasoning AI copilot, and a genuinely composable query builder." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid">
+        <div class="washi-tape" style="background: rgba(var(--accent-rgb), 0.6);"></div>
+        <a href="../index.html#work" class="project-back" data-hover>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back to Work
+        </a>
+        <span class="section-tag" data-reveal>Internal Prototype — Business Intelligence Hub</span>
+        <h1 class="project-hero-title" data-reveal>BI Hub <em>Prototyping</em></h1>
+        <p class="section-desc" data-reveal>A Wizard-of-Oz prototype built to make AI-powered financial insight, ad-hoc data querying, and cross-business analytics feel shippable — before a line of production infrastructure exists.</p>
+
+        <div class="project-meta" data-reveal>
+          <div class="project-meta-item"><span>Role</span><strong>Design &amp; prototype engineering</strong></div>
+          <div class="project-meta-item"><span>Surface</span><strong>Intuit Design System, Fusion Bench shell</strong></div>
+          <div class="project-meta-item"><span>Stack</span><strong>React, TypeScript, Vite</strong></div>
+          <div class="project-meta-item"><span>Status</span><strong>39 iterative deploys and counting</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Brief</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Most BI mockups stop at the pretty screen. Stakeholders click through a happy path, nod, and the prototype quietly can't answer the second question anyone asks: "what if I switch companies," "what if I ask it something unscripted," or "can I actually build a report out of this."</p>
+          <p>This project set out to answer those questions on purpose. The brief was to prototype a unified analytics workspace — home dashboard, financial reports, an AI copilot, a query/workbook builder, and a KPI/alerting layer — convincingly enough that a reviewer could push on any of it and find real, interlocking behavior underneath, not a slide deck wearing a UI.</p>
+          <p>That meant treating three things as first-class design problems, not engineering afterthoughts: what happens when the data context changes, what happens when the AI is asked something off-script, and what happens when someone actually tries to build something rather than just look at it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Multiple Businesses, One Data Spine</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The header company switcher isn't cosmetic. Every screen in the app — dashboard widgets, financial statements, KPI scorecards, saved queries, bank feeds, even the AI's answers — is keyed to whichever business is currently selected, and switching cascades through all of it at once.</p>
+          <p>Early passes at this kind of prototype fake it: a couple of routes get a special-cased "if company B, show this instead" branch, wired by hand for a specific demo beat. That approach collapses the moment someone clicks into a screen nobody scripted for. The fix here was architectural rather than cosmetic — a single canonical business-identity layer that every dataset and component reads from, so there's no unscripted surface left to expose.</p>
+          <p>A resolver function maps whatever the shell's switcher happens to be showing to one of two canonical business identities, falling back to a sane default for anything the mock data doesn't cover. Every downstream dataset is stored keyed by that identity and exposed through a single hook, so one switcher click — <strong>resolveBusinessId() → useBusinessId() → reports, KPIs, alerts, bank feed, and AI answers</strong> — re-derives the entire workspace in one memoized pass. No manual refetching, no page reload, and no screen quietly still showing the old company's numbers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>An AI Panel That Argues Its Way to an Answer</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The "Intuit Intelligence" side panel is a Wizard-of-Oz chat interface — but the interaction model underneath is deliberately more elaborate than a lookup table, because the thing being prototyped isn't the answer, it's the feeling of an agent reasoning toward one. Every query runs through an ordered chain of intent matchers, sequenced so a narrow, business-specific question gets caught before a broad catch-all like "revenue" or "advertising" can steal it — the difference between an AI that feels like it understood exactly what you asked and one that visibly pattern-matched the nearest keyword.</p>
+          <p>Responses aren't flat strings. Each one carries a fabricated "thinking" trace shown before the answer lands, plus optional flags telling the panel which inline widget to surface next — a connect-account card, a follow-up chip, a KPI callout. Several answers are business-aware the same way the rest of the app is: the same question returns different, internally consistent figures depending on which company is selected.</p>
+          <p><strong>Canvas mode</strong> takes this further — the chat compresses to a rail and a full dashboard-style surface takes over, staging a scripted, multi-step arc where an initial insight ("show me the full picture") expands into a live-feeling dashboard, and a follow-up refinement ("add my flower costs") visibly layers new data onto the same canvas instead of starting over.</p>
+          <p>Three separate account-linking modals — ad platforms, payment processing, payroll — simulate an OAuth-style consent flow entirely in UI state: a fake auth window, an account picker, a staged "connecting…" delay before success. None of it touches a real network, but the state machines are real — a flow can be cancelled at any screen, and a multi-account card only unlocks its payoff once all three connections resolve — so a reviewer clicking "Connect" feels actual latency and actual stakes, not an instant, weightless toggle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>A Data Studio That Isn't a Screenshot of One</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The hardest part of prototyping a query/workbook tool is that "let the user build something" is exactly the feature most mockups fake with a static image. This one doesn't — queries, pivots, and pages are genuinely composable, and they cross-reference each other the way real saved artifacts would: <strong>Visual SQL</strong>, a drag-and-drop query builder where joins, clauses, and conditions assemble into a real query shape with no SQL literacy required; <strong>Workbooks</strong>, a three-tab builder that walks from raw dataset and filters into a pivot configuration and a chart-type selection; genuine <strong>pivot tables</strong> with drop zones and real aggregation types (sum, count, average, min, max); and <strong>Pages</strong>, a Notion-style document editor where a paragraph can sit next to an embedded workbook tab — table, pivot, KPI, or chart — pulled in as a first-class block.</p>
+          <p>What makes this deep rather than merely wide is the cross-referencing: saved workbooks are seeded with fully populated multi-tab content per business, and saved pages reference specific tabs of specific workbooks by id, so opening a page and seeing a "live" chart inline is really that document resolving a pointer into the workbook data layer. Nothing about that relationship is hard-coded per page — it's a small, real data model doing the work a hand-placed screenshot usually would.</p>
+        </div>
+      </div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "The test for whether a prototype is convincing isn't whether the happy path looks good. It's whether the second click still makes sense."
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Retaining Context Without Paying for It</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>A prototype this interconnected accumulates a lot of implicit state — which business is being demoed, which Figma spec a component was built against, which bug was just fixed and why. Two lightweight systems kept that context durable without bloating every working session.</p>
+          <p>Every deploy — version bump, build, publish — is preceded by a changelog entry, not followed by one. Writing the entry first forces a clear statement of what actually changed before the tooling immortalizes it in a version tag, so the log reads as a running design record rather than a mechanically generated diff summary. Alongside it, a small per-project checkpoint file tracks a "right now" line, what's done versus in flight, the key files in play, and the immediate next step — so a freshly cleared working session reads the checkpoint first and picks up exactly where the last one left off. <em>Work, checkpoint, clear, resume.</em></p>
+          <p>Treating memory as a design problem, not just an engineering one, is what let the project scale to dozens of iterative deploys — cross-referenced data, scripted narrative branches, a real component library — without losing coherence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>What This Demonstrates</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Taken together, these systems are the difference between a prototype that survives a scripted demo and one that survives a curious reviewer. Switching companies doesn't just relabel a header — it re-derives the whole workspace. Asking the AI something isn't a lookup — it's an ordered reasoning chain with real state underneath its theatrics. Building a report isn't a static mockup — it's a real, if small, data model of queries, pivots, and pages that reference each other. And none of it required any one session to remember everything at once, because the project itself was built to hold its own memory.</p>
+          <p>Built on React, TypeScript, and Vite, inside the Intuit Design System's Fusion Bench shell, with seeded mock data and continuous gh-pages deploys.</p>
+        </div>
+      </div>
+    </section>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

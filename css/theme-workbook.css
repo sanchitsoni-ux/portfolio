@@ -72,6 +72,12 @@
   font-weight: 800;
   text-transform: uppercase;
 }
+[data-theme="workbook"] .dynamic-word-sizer span {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0 6px;
+}
 [data-theme="workbook"] .dynamic-word {
   background: var(--primary);
   color: #0a0a0a !important;

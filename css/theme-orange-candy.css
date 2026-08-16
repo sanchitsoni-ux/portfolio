@@ -75,6 +75,12 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+[data-theme="orange-candy"] .dynamic-word-sizer span {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 6px;
+}
 [data-theme="orange-candy"] .dynamic-word {
   background: var(--primary);
   color: #000000 !important;
