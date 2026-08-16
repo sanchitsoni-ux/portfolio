@@ -414,4 +414,49 @@
     }
   }
 
+  /* ============ MOCK CAROUSELS (auto-rotating, fixed square stage) ============ */
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('.mock-carousel-track');
+    const dotsWrap = carousel.querySelector('.carousel-dots');
+    const slides = track ? Array.from(track.querySelectorAll('.mock-carousel-slide')) : [];
+    if (!track || slides.length < 2) return;
+
+    track.classList.add('carousel-js');
+    let current = 0;
+    let timer = null;
+
+    const goTo = (index) => {
+      const next = (index + slides.length) % slides.length;
+      if (next === current && slides[current].classList.contains('active')) return;
+      slides[current].classList.remove('active');
+      if (dotsWrap) dotsWrap.children[current].classList.remove('active');
+      current = next;
+      slides[current].classList.add('active');
+      if (dotsWrap) dotsWrap.children[current].classList.add('active');
+    };
+
+    if (dotsWrap) {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', 'Go to image ' + (i + 1));
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsWrap.appendChild(dot);
+      });
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 4500);
+    }
+
+    slides[0].classList.add('active');
+    if (dotsWrap) dotsWrap.children[0].classList.add('active');
+    resetTimer();
+
+    carousel.addEventListener('mouseenter', () => clearInterval(timer));
+    carousel.addEventListener('mouseleave', resetTimer);
+  });
+
 })();

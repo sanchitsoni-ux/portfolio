@@ -35,81 +35,141 @@
   <main id="top">
 
     <section class="project-hero">
-      <div class="hero-polaroid project-hero-polaroid">
+      <div class="hero-polaroid project-hero-polaroid project-hero-split">
         <div class="washi-tape" style="background: rgba(var(--yellow-rgb), 0.65);"></div>
-        <a href="../index.html#work" class="project-back" data-hover>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Work
-        </a>
-        <span class="section-tag" data-reveal>Platform / DevX — Intuit Developer Portal</span>
-        <h1 class="project-hero-title" data-reveal>AI Paved-Path <em>Service Creation</em></h1>
-        <p class="section-desc" data-reveal>A guided, AI-assisted way for developers to create and configure new services — from a design-led bet with no product roadmap behind it, to a CTO-approved part of Intuit's FY26 strategy.</p>
-
-        <div class="project-meta" data-reveal>
-          <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
-          <div class="project-meta-item"><span>Timeline</span><strong>Q3 FY24 – Q1 FY25</strong></div>
-          <div class="project-meta-item"><span>Team</span><strong>+ Sr designer, content designer</strong></div>
-          <div class="project-meta-item"><span>Status</span><strong>CTO-approved for FY26</strong></div>
+        <div class="project-hero-intro">
+          <a href="../index.html#work" class="project-back" data-hover>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Work
+          </a>
+          <span class="section-tag" data-reveal>Platform / DevX — Intuit Developer Portal</span>
+          <h1 class="project-hero-title" data-reveal>AI Paved-Path <em>Service Creation</em></h1>
+          <p class="section-desc" data-reveal>A guided, AI-assisted way for developers to create and configure new services — from a design-led bet with no product roadmap behind it, to a CTO-approved part of Intuit's FY26 strategy.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="project-cover-wrap">
-      <div class="project-cover" data-parallax data-speed="0.06">
-        <img src="../images/service-creation/svc-devportal-entry.jpg" alt="Developer Portal home with a 'Create service asset via Intuit Assist' Paved Road card" loading="lazy" />
+        <div class="mock-frame-inner project-hero-media">
+          <img src="../images/service-creation/svc-downstream-suggested-workflow.png" alt="Intuit Development Portal service asset view with a guided Create/Deploy/Configure stepper and a Suggested Workflow panel" loading="lazy" data-parallax data-speed="0.06" />
+        </div>
+        <div class="project-hero-details">
+          <div class="project-meta" data-reveal>
+            <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
+            <div class="project-meta-item"><span>Timeline</span><strong>Q3 FY24 – Q1 FY25</strong></div>
+            <div class="project-meta-item"><span>Team</span><strong>+ Sr designer, content designer</strong></div>
+            <div class="project-meta-item"><span>Status</span><strong>CTO-approved for FY26</strong></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
-          <span class="section-tag" data-reveal>The Problem</span>
+          <span class="section-tag" data-reveal>Project Context &amp; Goals</span>
         </div>
         <div class="project-section-body" data-reveal>
           <p>Backend infrastructure is usually divided into smaller pieces — code, APIs, databases — deployed independently, like LEGO blocks. Those blocks come together to build an entire application: TurboTax has one login lego, one payment lego, one tax-form lego, and so on. Knowing which blocks to snap together, and in what order, was almost entirely tribal knowledge.</p>
-          <p>The bet was that AI could change that: create and deploy services on a developer's behalf, then help them assemble complex applications through guided, configuration-driven experiences instead of hand-built plumbing every time.</p>
+          <p><strong>Hypothesis:</strong> service creation, deployment, and configuration is difficult for users due to a lack of discoverability and efficient access to the necessary tools and information. Two lines from early interviews said it plainly: <em>"I want to connect my services, but I always need to ask my team how to find resources and how to configure,"</em> and <em>"I wish I don't have to ask someone or go to documentation to figure out how to deploy and configure."</em></p>
           <p>The business case was velocity. Dev velocity was running about 30% under target, and velocity and PR-merge rate are the two clearest signals of whether engineering is actually hitting production targets — which flows straight through to revenue and how fast the org can innovate.</p>
         </div>
       </div>
     </section>
 
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-hypothesis.png" alt="Hypothesis slide: service creation, deployment, and config is difficult due to a lack of discoverability and efficient access to necessary tools, with two supporting user quotes" loading="lazy" />
+      </div>
+    </section>
+
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
-          <span class="section-tag" data-reveal>Research &amp; Reframing</span>
+          <span class="section-tag" data-reveal>User Problem</span>
         </div>
         <div class="project-section-body" data-reveal>
-          <p>It started with user interviews mapping developers' actual end-to-end flow for standing up a new service — where the bottlenecks and pain points really were, not where we assumed they'd be. That fed directly into vision setting and alignment on what to build next.</p>
-          <p>The clearest reframe came from an analogy: it's like trying to build a LEGO train. You know you want a train. There are instructions for building the suspension, and instructions for the engine — but nothing for the whole train. Developers knew the north-star goal; they didn't know how to get there. That gap, not any single missing feature, was the actual problem.</p>
+          <p>Boiled down, the problem had two halves: users knew their goal but didn't know how to <strong>1)</strong> get there, and <strong>2)</strong> achieve that goal efficiently — think setting up EventBus communication, a downstream connection, credentials, and the dozen other small decisions bundled inside "just create a service."</p>
         </div>
       </div>
     </section>
 
-    <section class="project-gallery">
-      <div class="project-gallery-item" data-hover style="grid-column: 1 / -1; aspect-ratio: 16/9;"><img src="../images/service-creation/svc-journey-mapping.jpg" alt="Current-state journey mapping board for Day 0 and Day 1 of standing up a new service" loading="lazy" /></div>
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-user-problem.png" alt="User problem slide: users know their goal but don't know how to get there or achieve it efficiently, i.e. setting up EventBus communication, downstream connection, credentials" loading="lazy" />
+      </div>
     </section>
 
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
-          <span class="section-tag" data-reveal>Finding the Right Shape</span>
+          <span class="section-tag" data-reveal>Current State → Ideal State</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Mapping the current state showed a punishing loop: read intro documentation, reach out to partner teams, reach out to senior members just to get started — then manually fill out multiple fields to create and deploy, hit a wall of required configuration (IDPS, Artifactory, traffic, custom Splunk indexing), read more documentation, reach out again for use-case-specific configuration, then read and reach out a third time for anything left over.</p>
+          <p>One persona built from this research, Hannah, a Data Service Developer, made the shape of the problem concrete:</p>
+          <p style="margin-left: 20px;"><strong>I'm trying to</strong> create, deploy, and configure a service for Kafka Topic Management so I can test service communication.<br /><strong>But</strong> I'm finding the end-to-end experiences or workflows confusing due to the high level of flexibility in the process,<br /><strong>because</strong> there is a lack of available data on the necessary vs. optional steps and user preferences for creating, deploying, and configuring services —<br /><strong>which makes me feel</strong> slow and clueless about what to do next in the development journey.</p>
+          <p>The ideal state collapsed that loop into two moves: prepopulate Day 0 fields so a developer can start the paved-road process and get an approval before deploy — then hand off to a <strong>dynamic stepper</strong> that generates a personalized, guided experience for whatever use-case-specific configuration is left, and lets a developer update or add goals as they go.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-current-state.png" alt="Current State diagram: a four-stage loop of intro documentation, create and deploy, required configuration, and additional documentation and support, feeding back into use-case specific configuration" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-hannah-persona.png" alt="Hannah, Data Service Developer persona: I'm trying to / But / Because / Which makes me feel POV statement about setting up Kafka Topic Management" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-ideal-state.png" alt="Ideal State diagram: prepopulate Day0 fields for Create and Deploy, then a Dynamic Stepper for use-case specific configuration" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Divergent Concepts</span>
         </div>
         <div class="project-section-body" data-reveal>
           <p>The first concept proposed a chat interface in place of a form-filling UI, paired with a guided experience for doing configuration. Presenting that demo to the GenAI Web Plugin development team and PM led to an exploration of a full chat assistant — but further testing showed an immersive chat panel wasn't the right shape for this task. The alternative that stuck was a micro-assist embedded directly in the creation flow: contextual help exactly where a developer was stuck, instead of a separate conversation to context-switch into.</p>
-          <p>A third round of demos, this time with the Intuit Kubernetes Services dev team, surfaced a gap the concept hadn't covered — developers often work multiple configuration goals at once — which led to adding a dedicated tab for managing and updating several goals in parallel. From there, the guided-workflow components themselves got built out: steps that could be marked complete, AI-generated actions with one-click authorization, and a live "connecting" state that confirms when two services are actually wired together.</p>
+          <p>A third round of demos, this time with the Intuit Kubernetes Services dev team, surfaced a gap the concept hadn't covered — developers often work multiple configuration goals at once — which led to adding a dedicated tab for managing and updating several goals in parallel. From there, the dynamic stepper got built out into a real "suggested workflow": Create and Deploy steps that resolve automatically and log what happened, followed by a Configure phase where each remaining task — connect downstream service, configure IDPS, configure event bus, set up traffic — carries its own one-click links out to the right tool or doc.</p>
         </div>
       </div>
     </section>
 
-    <section class="project-gallery" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-concept-chat-assistant.jpg" alt="Early concept: an immersive Intuit Assist chat panel for service configuration" loading="lazy" /></div>
-      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-concept-micro-assist.jpg" alt="Micro-assist concept: contextual Intuit Assist help embedded in the New Web Plugin creation flow" loading="lazy" /></div>
-      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-guided-workflow-states.jpg" alt="Guided workflow component states — create, AI generated, connecting, task complete" loading="lazy" /></div>
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-divergent-concepts-collage.png" alt="Divergent concepts collage — overlapping screens of the Downstream Services stepper and Recommended Flow / Suggested workflow panels explored during this phase" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="mock-frame" data-carousel data-reveal>
+      <div class="mock-frame-inner">
+        <div class="mock-carousel-track">
+          <img class="mock-carousel-slide" src="../images/service-creation/svc-intuit-assist-helper.png" alt="Intuit Assist helper — helps the user figure out what to pick or fill during the service creation process" loading="lazy" />
+          <img class="mock-carousel-slide" src="../images/service-creation/svc-dynamic-stepper.png" alt="Suggested workflow component: a numbered stepper showing completed Create and Deploy steps, and an in-progress Configure step with actionable sub-tasks" loading="lazy" />
+        </div>
+      </div>
+      <div class="carousel-dots"></div>
     </section>
 
     <blockquote class="project-quote" data-reveal>
-      "Good job guys. I want you to show this at GED. Can you work with Avni to identify a developer to build this?" — Director of Product
+      "Good job guys. I want you to show this at GED. Can you work with Avni to identify a developer to build this?" — Mukulika, Director of Product
     </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>User Testing</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Feedback from testing sessions shaped the final details as much as the earlier concept rounds did — confirmation the guided shape was right, plus the edge cases that made it real: <em>"I appreciate the guided experience. Now I don't need to worry how to navigate through,"</em> one participant said, while another asked the question that led directly to the multi-goal tab: <em>"What if the user has multiple goals?"</em> A third wanted the assist panel to stay put rather than re-collapsing after every step, and a fourth asked whether a goal outside the suggested list could be added by hand — both of which became follow-up refinements.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="project-section">
       <div class="project-section-grid">
@@ -117,24 +177,29 @@
           <span class="section-tag" data-reveal>From Demo to Roadmap</span>
         </div>
         <div class="project-section-body" data-reveal>
-          <p>That director-level greenlight sent the concept to Global Engineering Days, Intuit's internal hackathon — where it generated enough interest from the developer community to justify more engineering demos. A round of concept testing across multiple teams surfaced edge cases, additional use cases, and constraints the earlier rounds had missed. One developer put it simply: "I appreciate the guided experience. Now I don't need to worry how to navigate through."</p>
+          <p>That greenlight from Mukulika sent the concept to Global Engineering Days, Intuit's internal hackathon — where it generated enough interest from the developer community to justify more engineering demos. A round of concept testing across multiple teams surfaced edge cases, additional use cases, and constraints the earlier rounds had missed.</p>
           <p>From there it was about tying the work to something bigger — a design workshop with the Horizons and Apex design groups connected the guided workflow to a broader platform experience, and more prototyping produced a real start-to-finish journey instead of a handful of disconnected screens. Contributing demos, the research deck, and the underlying thinking to a strategic paper turned all of it into a pitch a CTO could actually approve.</p>
         </div>
       </div>
     </section>
 
-    <section class="project-gallery">
-      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-ged-brainstorm.jpg" alt="Global Engineering Days brainstorming board — sketches and voting from the design team" loading="lazy" /></div>
-      <div class="project-gallery-item" data-hover><img src="../images/service-creation/svc-e2e-prototype.jpg" alt="Prototype of the end-to-end service creation journey, from Developer Portal home to a guided task" loading="lazy" /></div>
+    <section class="mock-frame" data-carousel data-reveal>
+      <div class="mock-frame-inner">
+        <div class="mock-carousel-track">
+          <img class="mock-carousel-slide" src="../images/service-creation/svc-goal-sketch.jpeg" alt="Early whiteboard sketch mapping a developer's unclear path from goal to finished service" loading="lazy" />
+          <img class="mock-carousel-slide" src="../images/service-creation/svc-downstream-services.png" alt="End-to-end view of the Downstream Services configuration step in the guided journey" loading="lazy" />
+        </div>
+      </div>
+      <div class="carousel-dots"></div>
     </section>
 
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
-          <span class="section-tag" data-reveal>Outcome</span>
+          <span class="section-tag" data-reveal>Outcome &amp; Next Steps</span>
         </div>
         <div class="project-section-body" data-reveal>
-          <p>The project got CTO-level approval for FY26 strategic intake. Guided, AI-assisted service creation is now part of the actual product roadmap — not just a design team's side bet — and teams are building POCs and MVPs off the concepts from this work.</p>
+          <p>The project got CTO-level approval for FY26 strategic intake. Guided, AI-assisted service creation is now part of the actual product roadmap — not just a design team's side bet. The immediate next step: identify developers and PMs to collaborate on building a prototype or component, with the explicit goal of assessing its potential as a reusable pattern across other paved-road journeys, not just this one — with early talks already underway with the GenUX paved-roads team.</p>
         </div>
       </div>
     </section>
