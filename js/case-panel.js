@@ -225,6 +225,19 @@
       var href = tile.getAttribute('href');
       if (isOpen && href === activeHref) return;
       openPanel(href);
+      // The work list reflows to its single-column layout the instant
+      // .panel-open is applied above, so the tile's new position is
+      // already correct here — no need to wait a frame. Keeps whichever
+      // tile was clicked in view instead of leaving it below the fold.
+      // block: 'start' (plus the scroll-margin-top on .work-tile, to
+      // clear the fixed nav) so the active tile lands at the top of the
+      // viewport rather than merely somewhere within it. Desktop
+      // split-view only — on mobile the panel is a full-screen overlay,
+      // so the list underneath isn't visible and scrolling it would just
+      // leave a confusing position for whenever the panel closes.
+      if (!stackedLayout()) {
+        tile.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 

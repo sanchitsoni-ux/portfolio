@@ -634,7 +634,7 @@ img { max-width: 100%; display: block; }
 }
 .work-tile:hover .work-tile-media { transform: translateY(-4px); }
 .work-tile-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.work-tile-media.has-photo .work-tile-mark {
+.work-tile-media.has-photo .trait-badge {
   position: relative;
   z-index: 1;
   padding: 3px 7px;
@@ -642,7 +642,7 @@ img { max-width: 100%; display: block; }
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
 }
-.work-tile-mark {
+.trait-badge {
   font-family: var(--font-mono, inherit);
   font-size: 11px;
   font-weight: 600;
@@ -1229,13 +1229,23 @@ img { max-width: 100%; display: block; }
    carry the base [data-reveal] CSS transition — Motion owns these frames. */
 .case-panel-body [data-reveal] { transition: none; }
 
-/* Work list collapses into a compact, scannable list while the panel is
-   open — thumbnail drops out, but the description stays so each item is
-   still recognizable, not just a bare title. */
+/* Work list collapses into a compact, single-column list while the panel
+   is open — the tile itself (thumbnail + text) stays intact, just laid
+   out in one narrower column instead of the multi-column grid. */
 .work-layout.panel-open .work-categories {
   grid-template-columns: 1fr;
   max-width: 460px;
   gap: 40px;
+}
+/* Guarantees enough room below the last tile to actually scroll it up to
+   the nav-cleared "top" position (see scrollIntoView in case-panel.js) —
+   without this, tiles near the end of the list hit the bottom of the
+   page before they can reach the top of the viewport. Desktop split-view
+   only: on the mobile full-screen panel (below) this list sits behind an
+   opaque overlay, so padding it out here would just leave a confusing
+   scroll position for whenever the panel closes. */
+@media (min-width: 901px) {
+  .work-layout.panel-open .work { padding-bottom: 100vh; }
 }
 .work-layout.panel-open .work-category-list { gap: 18px; }
 .work-layout.panel-open .work-tile {
@@ -1247,7 +1257,10 @@ img { max-width: 100%; display: block; }
 .work-layout.panel-open .work-tile:hover { background: rgba(var(--primary-rgb), 0.06); }
 .work-layout.panel-open .work-tile.active-tile { background: rgba(var(--primary-rgb), 0.1); }
 .work-layout.panel-open .work-tile.active-tile h3 { color: var(--primary); }
-.work-layout.panel-open .work-tile-media { display: none; }
+/* Clears the fixed nav when the active tile is scrolled to block: 'start'
+   on open (see case-panel.js) — without this the tile lands flush with
+   the viewport top and the nav clips its first ~90px. */
+.work-layout.panel-open .work-tile { scroll-margin-top: 110px; }
 
 /* Below 900px there's no room for a side-by-side split — the panel
    becomes a full-screen modal that slides up over everything instead,
