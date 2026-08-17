@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>AI Paved Roads — Sanchit Soni</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI Paved Roads — a guided, AI-assisted way for developers to create and configure new services, from a design-led bet to a CTO-approved FY26 roadmap item." />
+  <meta name="description" content="AI Paved Roads — a guided, AI-assisted way for developers to build services, from a design-led bet to a CTO-approved roadmap item to Cloud Workspaces and a Skill Marketplace used by ~50% of Intuit's developers." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
           </a>
           <span class="section-tag" data-reveal>Platform / DevX — Intuit Developer Portal</span>
           <h1 class="project-hero-title" data-reveal>AI Paved <em>Roads</em></h1>
-          <p class="section-desc" data-reveal>A guided, AI-assisted way for developers to create and configure new services — from a design-led bet with no product roadmap behind it, to a CTO-approved part of Intuit's FY26 strategy.</p>
+          <p class="section-desc" data-reveal>A guided, AI-assisted way for developers to build services — from a design-led bet with no product roadmap behind it, to a CTO-approved part of Intuit's FY26 strategy, to a full pivot once agentic coding tools changed the problem. It shipped as Cloud Workspaces and a Skill Marketplace, now used by roughly half of Intuit's developers.</p>
         </div>
         <div class="mock-frame-inner project-hero-media">
           <img src="../images/service-creation/svc-downstream-suggested-workflow.png" alt="Intuit Development Portal service asset view with a guided Create/Deploy/Configure stepper and a Suggested Workflow panel" loading="lazy" data-parallax data-speed="0.06" />
@@ -52,9 +52,9 @@
         <div class="project-hero-details">
           <div class="project-meta" data-reveal>
             <div class="project-meta-item"><span>Role</span><strong>Design lead</strong></div>
-            <div class="project-meta-item"><span>Timeline</span><strong>Q3 FY24 – Q1 FY25</strong></div>
+            <div class="project-meta-item"><span>Timeline</span><strong>Q3 FY24 – FY25</strong></div>
             <div class="project-meta-item"><span>Team</span><strong>+ Sr designer, content designer</strong></div>
-            <div class="project-meta-item"><span>Status</span><strong>CTO-approved for FY26</strong></div>
+            <div class="project-meta-item"><span>Status</span><strong>Shipped — live in FY25</strong></div>
           </div>
         </div>
       </div>
@@ -183,25 +183,111 @@
       </div>
     </section>
 
-    <section class="mock-frame" data-carousel data-reveal>
+    <section class="mock-frame" data-reveal>
       <div class="mock-frame-inner">
-        <div class="mock-carousel-track">
-          <img class="mock-carousel-slide" src="../images/service-creation/svc-goal-sketch.jpeg" alt="Early whiteboard sketch mapping a developer's unclear path from goal to finished service" loading="lazy" />
-          <img class="mock-carousel-slide" src="../images/service-creation/svc-downstream-services.png" alt="End-to-end view of the Downstream Services configuration step in the guided journey" loading="lazy" />
-        </div>
+        <img src="../images/service-creation/svc-ged-demo-booth.jpeg" alt="Demoing AI Paved Roads at the Global Engineering Days booth — two monitors showing the DevPortal value proposition and workflow, with the team gathered around" loading="lazy" />
       </div>
-      <div class="carousel-dots"></div>
+      <p class="mock-frame-caption">Live at the Global Engineering Days demo booth — the pitch that turned into a CTO-approved roadmap item.</p>
     </section>
 
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
-          <span class="section-tag" data-reveal>Outcome &amp; Next Steps</span>
+          <span class="section-tag" data-reveal>From Roadmap Item to Rethink</span>
         </div>
         <div class="project-section-body" data-reveal>
-          <p>The project got CTO-level approval for FY26 strategic intake. Guided, AI-assisted service creation is now part of the actual product roadmap — not just a design team's side bet. The immediate next step: identify developers and PMs to collaborate on building a prototype or component, with the explicit goal of assessing its potential as a reusable pattern across other paved-road journeys, not just this one — with early talks already underway with the GenUX paved-roads team.</p>
+          <p>The CTO-level approval was real — budget, a team, a slot on Intuit's FY26 roadmap. Guided, AI-assisted service creation was no longer a design team's side bet; it was on the plan. Work started on turning the stepper into a shippable product.</p>
+          <p>Then, over the months that followed, the ground underneath the whole bet moved. Agentic coding tools — Claude Code, Cursor, and the like — went from novelty to how engineers actually wanted to work. A UI-heavy stepper that walked someone through a form, one field at a time, stopped being the right answer to "how do I build a service." The underlying problem — tribal knowledge, slow setup, no clear path from goal to finished service — hadn't gone away. The shape of the right solution had.</p>
+          <p>Rather than ship the original stepper as scoped, the team split the bet into two more foundational pieces, and started designing for a developer working alongside an agent instead of one filling out a form.</p>
         </div>
       </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Bet 1 — Cloud Workspaces</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>A Cloud Workspace is a development environment that's already set up before a developer opens it for the first time — repo cloned, dependencies installed, credentials configured, an AI coding agent like Claude Code or Cursor authenticated and ready to go. Where the original stepper tried to <em>guide</em> someone through configuration, a Cloud Workspace removes the configuration instead: no local dependency installs, no "what version of node is everyone else on," no losing an afternoon to environment drift between two laptops.</p>
+          <p>A developer picks a workspace from the desktop app — tied to a repo, showing a live status and a one-click way to start it back up — and gets to work with an agent already wired into that exact environment. It's disposable and shareable in a way a laptop never was: spin one up for a task, hand it to a reviewer, tear it down once it's done.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-cloud-workspaces-list.png" alt="Intuit Builder Desktop App, Cloud Workspaces tab — a list of workspaces, each showing status, a ship-it tag, the linked GitHub repo, and Open in / preview / start controls, plus a prompt to add a Claude Code or Cursor API key so agents can authenticate" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">A Cloud Workspace tied to a repo, a status, and one click to start it back up — an agent already authenticated and ready inside.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Bet 2 — Skill Marketplace</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>A working environment only solved half the original problem. The other half — knowing <em>which</em> lint rules, scaffolding, internal APIs, and review conventions applied to the service someone was building — was the same tribal-knowledge gap the original research had surfaced, just needing a different delivery mechanism now that the "user" doing the reading was as often an agent as a person.</p>
+          <p>The answer was a Skill Marketplace: any team can publish a skill — a packaged, guided flow bundling documentation, scaffolding, and tool access for their part of the stack — and any developer's agent can discover, install, and use it, whether that developer is working inside a Cloud Workspace or locally in Cursor. By the time it shipped, the marketplace held over 400 published skills, from core developer-portal tooling to team-specific assistants for individual services.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-plugin-marketplace.png" alt="AI Builder Plugin Marketplace (beta) listing 405 installable skills, including devportal-plugin, code-assist-core, talon-service-assistant, ck-bigquery-mcp, and team-specific assistants, each installable per project" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">The Skill Marketplace, mid-scroll — 400+ published skills a developer's agent can install and use directly inside their Cloud Workspace.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Re-grounding the Pivot in Research</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>A pivot this size — from a nearly-shipped stepper to two new platform bets — needed more than conviction that the industry had moved. A run of workshops with the engineering team and PM re-grounded the new direction in the same kind of research the original stepper had come from.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-service-blueprint.png" alt="Cloud Workspaces service blueprint — current and future state for FY25, mapping customer goals, key workflows, and customer actions for two personas, Evelyn (SWE) and Taylor (SWE Reviewer), across four journey phases from pre-dev tasks through code completion and PR" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">A service blueprint of the day in the life of a developer and their reviewer — built with the engineering team to find exactly where in that flow a Cloud Workspace and an agent could remove friction.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-full-loop-persona.png" alt="Persona and journey map for Maya Li, a senior software engineer — her responsibilities, frustrations, tools, and needs, plus her current three-phase journey of slow setup, flaky builds, and slow PR review, set against an ideal four-phase state with Cloud Workspaces" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Maya's day, mapped twice — once as it actually happens, once as it could with a Cloud Workspace already configured for her. The gap between the two rows became the brief for what a "full loop" developer experience needed to cover.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/service-creation/svc-prioritization-workshop.png" alt="Prioritization workshop grouping feature ideas for in-app workspace management from short-term to long-term, including status notifications, quick actions from the menu bar, full workspace CRUD, and per-user IDE and environment preferences, voted on by the team" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Sequencing the resulting backlog by horizon, voted on with the team — this ordering became the actual build sequence for what shipped first.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>What Shipped</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The two bets converged into one experience: a developer opens a Cloud Workspace, and the skills their team has published come with it automatically, available to whichever agent they're running. That became the actual shape of AI Paved Roads — not a guided stepper UI, but the environment and the knowledge arriving already attached to the developer's agent, instead of requiring them to go hunt for either.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>4,000+</strong><span>developers on Cloud Workspaces</span></div>
+      <div class="project-stat"><strong>~50%</strong><span>of Intuit developers using it</span></div>
+      <div class="project-stat"><strong>405</strong><span>skills published in the marketplace</span></div>
     </section>
 
     <a href="../index.html#work" class="project-next" data-hover>

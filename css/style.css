@@ -1049,6 +1049,39 @@ img { max-width: 100%; display: block; }
   justify-content: center;
 }
 .mock-frame-inner img { display: block; max-width: 100%; width: auto; height: auto; margin: 0 auto; }
+.mock-frame-inner.mock-frame-video {
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.mock-frame-video iframe { width: 100%; height: 100%; border: none; display: block; }
+/* Some videos have embedding disabled by the owner (YouTube error 153) and
+   can only ever be a thumbnail that opens the real page — not an iframe. */
+.mock-frame-video-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mock-frame-video-link img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
+.mock-frame-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(var(--ink-rgb), 0.3);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mock-frame-play-btn svg { margin-left: 4px; }
+.mock-frame-video-link:hover .mock-frame-play-btn { transform: translate(-50%, -50%) scale(1.1); }
 .mock-frame-caption {
   margin: 14px auto 0;
   max-width: 720px;
