@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Clarity: Intuit Intelligence — Sanchit Soni</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Project Clarity — Intuit Intelligence, a secure conversational AI platform built into QuickBooks for open-ended business analysis." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/theme-workbook.css" />
+  <link rel="stylesheet" href="../css/theme-orange-candy.css" />
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme') || 'hand-drawn';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="overlays-mount"></div>
+  <div id="nav-mount"></div>
+  <div id="mobile-menu-mount"></div>
+  <script src="../js/components.js"></script>
+  <script>Components.mountChrome({ base: '../index.html', isHome: false, preloaderLabel: 'loading project' });</script>
+
+  <main id="top">
+
+    <section class="project-hero">
+      <div class="hero-polaroid project-hero-polaroid project-hero-split">
+        <div class="washi-tape" style="background: rgba(var(--primary-rgb), 0.6);"></div>
+        <div class="project-hero-intro">
+          <a href="../index.html#work" class="project-back" data-hover>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Work
+          </a>
+          <span class="section-tag" data-reveal>Conversational AI — QuickBooks Online</span>
+          <h1 class="project-hero-title" data-reveal>Project <em>Clarity</em></h1>
+          <p class="section-desc" data-reveal>Customers were already turning to tools like ChatGPT to make sense of their QuickBooks data — without the privacy or security their business actually needs. Project Clarity is Intuit Intelligence: a secure, conversational AI platform built directly into QuickBooks that lets a customer explore open-ended business questions and get accurate answers, without building a dashboard or wrangling a spreadsheet.</p>
+        </div>
+        <div class="mock-frame-inner project-hero-media">
+          <img src="../images/clarity/clarity-intro.jpeg" alt="Intuit Intelligence — the Intuit system of intelligence, combining Accounting AI, always-on human experts, and business intelligence" loading="lazy" data-parallax data-speed="0.06" />
+        </div>
+        <div class="project-hero-details">
+          <div class="project-meta" data-reveal>
+            <div class="project-meta-item"><span>Role</span><strong>Desktop lead</strong></div>
+            <div class="project-meta-item"><span>Product</span><strong>QuickBooks Online — Business Intelligence</strong></div>
+            <div class="project-meta-item"><span>Platform</span><strong>Web, iOS &amp; Android</strong></div>
+            <div class="project-meta-item"><span>Status</span><strong>Live — rolling out in phases (Q4 FY25–present)</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Problem</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p><strong>Analysis paralysis.</strong> The sheer volume of data and reports sitting inside QuickBooks is overwhelming — customers struggle to find timely, actionable insight for a strategic decision buried somewhere in profit and loss, cash flow, taxes, or expenses.</p>
+          <p><strong>Data security.</strong> Customers were already solving this the wrong way — dropping business data into public AI tools like ChatGPT for quick analysis — which meant they were already primed for the behavior, but doing it somewhere that couldn't guarantee the privacy or security their financial data actually needs.</p>
+          <p>Intuit Intelligence is the answer to both: a secure, conversational AI platform, purpose-built for open-ended business analysis, that lets a customer ask a real question and get a real answer without ever leaving QuickBooks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Team &amp; Logistics</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>I led design for the desktop experience within the Business Intelligence team, alongside a senior product designer, two PMs, multiple engineering teams, a UX researcher, and a content designer — partnered closely with the QB and Intuit Design System design-systems teams and a wide set of cross-functional stakeholders.</p>
+          <p>The project has been running since Q4 FY2025 (July 2025–present) and is still ongoing. Phase 1 rolled out in November 2025, with subsequent phases following as the surface expanded — my own involvement centered on QB Web and IES Web, alongside parallel work on QB iOS and Android.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Entry Points</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>The design started with the entry points, not the chat window. Customers needed to be able to reach Intuit Intelligence from wherever they already were — a report they were staring at, a global search, or a dedicated feed — and have the system carry over exactly how much context that starting point implied.</p>
+          <p>Each entry point sits somewhere on a local-to-global, low-to-high-context spectrum: a question asked from inside a specific Profit and Loss report carries far more built-in context than one asked from a global search bar, and the experience needed to feel intelligent about that difference rather than treating every query identically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-entry-points.png" alt="Intuit Intelligence user flow mapped across a local-to-global, low-to-high-context matrix, covering the Reports Dashboard, a Profit and Loss report, global search, and the Business Feed" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Mapping every entry point across two axes — local vs. global, and how much context the surrounding page already implies.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-basic-architecture.png" alt="Intuit Intelligence basic architecture diagram — entry points feed a conversation, which routes into Companion, Immersive, or a future view, and returns an adaptive, component-based response" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Underneath every entry point, the same architecture: a query is interpreted once, then rendered through whichever view fits the moment — composed from reusable design components rather than one-off screens.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>The Three Views</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Once a conversation starts, it lands in one of three views, chosen for how much room the moment actually needs — a quick lookup shouldn't take over the screen, and a multi-step analysis shouldn't be squeezed into a sidebar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-companion.gif" alt="Companion View — a compact panel surfacing Intuit Intelligence answers directly alongside the QuickBooks workflow the customer is already in" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption"><strong>Companion View</strong> — quick, in-context help that sits alongside whatever the customer is already doing, for a question that doesn't need the whole screen.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-immersive.gif" alt="Immersive View — a full-screen Intuit Intelligence conversation with suggested prompts for revenue outlook, marketing channels, bookkeeping, and hiring" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption"><strong>Immersive View</strong> — a dedicated, full-screen conversation for deeper exploration, when a question is going to take more than one back-and-forth to answer.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-canvas.gif" alt="Canvas View — a structured analysis comparing ad channel performance across Google Ads, Meta, and Square, with a data table and follow-up actions" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption"><strong>Canvas View</strong> — a working surface for multi-step, structured analysis: tables, comparisons, and follow-up actions, for questions that outgrow a chat bubble.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Finding the Right Entry Point</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Not every entry point performed the way we expected, so we treated placement as something to test rather than assume. An early home-screen widget experiment landed at roughly 2% engagement, well below our 3–5% target — a clear signal that the location and framing weren't yet earning attention on a page already competing for it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-entry-experimentation.jpeg" alt="Entry widget experimentation — seven variations of an Intuit Assist entry widget tested on the QuickBooks home page" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Entry widget experimentation — this version landed at 2% engagement, below our 3–5% target threshold.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-homepage-entry-best.jpeg" alt="The winning homepage entry point for Intuit Intelligence, framed as a Welcome to Intuit Assist landing card with a business feed beneath it" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">The entry point that won: 4x the engagement of the 2nd-best option, with more than 49% share of overall clicks across every touchpoint we tested.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Building Trust</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Handing an AI system open-ended access to someone's financial data only works if the customer trusts what comes back — and research made clear how thin that trust is. One QBO user put it bluntly: if the system is used once and doesn't hold up, trust doesn't degrade gracefully, it collapses.</p>
+        </div>
+      </div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "If we use something and don't find reliability, trust is deeply undermined." — Brian, QBO user
+    </blockquote>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label"></div>
+        <div class="project-section-body" data-reveal>
+          <p>We designed trust into the response itself, rather than treating it as a disclaimer bolted on afterward. The interface shows its working chain of thought in real time, so a customer can see how the system is reasoning toward an answer, not just receive the answer. Every response also surfaces the underlying sources it drew on — QuickBooks data, linked bank feeds, even relevant web sources — so a customer can verify exactly where a number came from instead of taking it on faith.</p>
+          <p>And when the ground truth is thinner — for example, when a customer uploads their own spreadsheet, PDF, or CSV instead of connecting live data — the system says so directly, flagging where its confidence is lower and suggesting a live connection for a more accurate answer next time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-chain-of-thought.gif" alt="Trust via chain of thought — the interface displays its working reasoning in real time, analyzing the request, sending it to Business Intelligence, and fetching business information, while responding to a request to summarize year-over-year performance" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">Trust via chain of thought — showing the reasoning in real time, not just the final answer.</p>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/clarity/clarity-accuracy-notes.jpeg" alt="A note flagging possible inaccuracy when a response is based only on figures from an uploaded spreadsheet, suggesting the customer link a live data source instead" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">A proactive accuracy note — when an answer leans on uploaded, static data rather than a live connection, the system says so and offers a fix.</p>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-grid">
+        <div class="project-section-label">
+          <span class="section-tag" data-reveal>Impact</span>
+        </div>
+        <div class="project-section-body" data-reveal>
+          <p>Intuit Intelligence is live across 4.4 million companies, handling 10,000 questions a day and more than 200,000 total — and the reception from early users has matched the scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-stats" data-reveal>
+      <div class="project-stat"><strong>4.4M</strong><span>companies with access</span></div>
+      <div class="project-stat"><strong>10,000</strong><span>questions handled daily</span></div>
+      <div class="project-stat"><strong>200K+</strong><span>total questions handled</span></div>
+    </section>
+
+    <blockquote class="project-quote" data-reveal>
+      "Of all the features that I've ever seen and ever demoed, this is the most impressive on a first beta launch. I will put that on record." — Jason, QBO user
+    </blockquote>
+
+    <a href="../index.html#work" class="project-next" data-hover>
+      <span class="project-next-label">Back to</span>
+      <span class="project-next-title">
+        All Work
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+  </main>
+
+  <div id="footer-mount"></div>
+  <script>Components.mountFooter();</script>
+
+  <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1049,6 +1049,14 @@ img { max-width: 100%; display: block; }
   justify-content: center;
 }
 .mock-frame-inner img { display: block; max-width: 100%; width: auto; height: auto; margin: 0 auto; }
+.mock-frame-caption {
+  margin: 14px auto 0;
+  max-width: 720px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  text-align: center;
+}
 
 /* Carousel variant — same grey canvas, cycles between slides */
 .mock-carousel-track { position: relative; width: 100%; }
@@ -1241,9 +1249,25 @@ img { max-width: 100%; display: block; }
 .work-layout.panel-open .work-tile.active-tile h3 { color: var(--primary); }
 .work-layout.panel-open .work-tile-media { display: none; }
 
+/* Below 900px there's no room for a side-by-side split — the panel
+   becomes a full-screen modal that slides up over everything instead,
+   rather than a sliver stacked below the (now scrolled-past) list. */
 @media (max-width: 900px) {
   .work-layout { flex-direction: column; }
-  .case-panel { position: static; width: 100%; height: 0; border-left: none; border-top: 3px solid var(--border-color); transition: none; }
+  .case-panel {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    flex: none;
+    border-left: none;
+    border-top: none;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 700;
+  }
+  .work-layout.panel-open .case-panel { transform: translateY(0); }
   .case-panel-inner { width: 100%; }
   .work-layout.panel-open .work-categories { max-width: 100%; }
+  body.case-panel-active { overflow: hidden; }
 }

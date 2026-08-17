@@ -146,15 +146,14 @@
   // item (width doesn't reliably defer to it here), animated by the plain
   // CSS transition on .case-panel — Motion's engine doesn't recognize
   // flex-basis as an animatable property, so this one stays CSS-driven.
-  // Mobile: the panel stacks below the list and sizes to content, so it's
-  // just shown/hidden — no width to animate, and height:auto can't
-  // meaningfully animate anyway.
+  // Mobile: the panel is a fixed full-screen modal (see the media query
+  // in style.css) whose slide-up is driven entirely by the .panel-open
+  // class on #workLayout, already toggled in openPanel/closePanel — no
+  // inline sizing needed here at all.
   function setPanelSize(px) {
     document.documentElement.style.setProperty('--case-panel-w', (px || 1040) + 'px');
 
     if (stackedLayout()) {
-      panel.style.height = px ? 'auto' : '0';
-      panel.style.maxHeight = px ? '80vh' : '0';
       if (nav) nav.style.right = '0px';
       return;
     }

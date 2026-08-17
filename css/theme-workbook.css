@@ -1,13 +1,13 @@
 /* ============================================================
    THEME: WORKBOOK
-   A sharp, engineer's-spec-sheet aesthetic (Inter + JetBrains
-   Mono, pure black/white, one cyan accent, sharp corners, hard
-   offset shadows) — inspired by karolbinkow.ski. Loaded after
-   style.css and scoped entirely under [data-theme="workbook"],
-   so the hand-drawn theme (the default) is untouched.
+   A sharp, engineer's-spec-sheet aesthetic (Space Grotesk, pure
+   black/white, one cyan accent, sharp corners, hard offset
+   shadows) — inspired by karolbinkow.ski. Loaded after style.css
+   and scoped entirely under [data-theme="workbook"], so the
+   hand-drawn theme (the default) is untouched. Typeface matches
+   the hand-drawn theme's Space Grotesk (already loaded site-wide)
+   — no separate font import needed here.
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root[data-theme="workbook"] {
   --primary: #00b8d4;
@@ -26,8 +26,8 @@
   --text-primary: #0a0a0a;
   --text-secondary: #383838;
   --text-tertiary: #6b6b6b;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --wb-bg-soft: #f3f3ee;
   --wb-shadow: 4px 4px 0 rgba(10, 10, 10, 1);
 }
