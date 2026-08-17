@@ -210,6 +210,7 @@
 
       bindHovers(body);
       initCarousels(body);
+      if (window.PersonaTool) window.PersonaTool.init(body);
       animateContentIn(body);
       panel.scrollTop = 0;
     }).catch(function () {

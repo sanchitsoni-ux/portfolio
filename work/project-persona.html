@@ -56,6 +56,40 @@
             <div class="project-meta-item"><span>Tools</span><strong>Figma</strong></div>
             <div class="project-meta-item"><span>Tags</span><strong>Framework, Guideline, AI</strong></div>
           </div>
+
+          <a href="#personaTool" class="project-live-link" data-hover data-reveal>
+            Try the persona generator
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="persona-tool" id="personaTool" data-reveal>
+      <div class="persona-tool-head">
+        <span class="section-tag" data-reveal>Try It</span>
+        <h2 data-reveal>Build Your Own AI Persona</h2>
+        <p data-reveal>The same HEXACO-to-color method from this case study, live: move the six sliders to shape a personality, then download it as a ready-to-use Claude skill — personality, voice &amp; tone, and a brand palette, generated from your choices.</p>
+      </div>
+
+      <div class="persona-tool-body">
+        <div class="persona-tool-controls">
+          <label class="persona-name-field">
+            Assistant name
+            <input type="text" id="personaName" value="Compass" maxlength="40" />
+          </label>
+          <div id="personaControls"></div>
+        </div>
+
+        <div class="persona-tool-preview">
+          <div class="persona-swatches" id="personaSwatches"></div>
+          <p class="persona-summary" id="personaSummary"></p>
+          <ul class="persona-voice" id="personaVoice"></ul>
+          <button type="button" class="persona-download-btn" id="personaDownload" data-hover>
+            Download as Claude Skill
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="5" y1="21" x2="19" y2="21"/></svg>
+          </button>
+          <p class="persona-download-hint">Downloads a single .md file — frontmatter, personality, voice &amp; tone, and hex codes — ready to drop into a Claude skills folder.</p>
         </div>
       </div>
     </section>
@@ -234,5 +268,6 @@
 
   <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/persona-tool.js"></script>
 </body>
 </html>

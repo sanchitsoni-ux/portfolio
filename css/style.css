@@ -1271,3 +1271,79 @@ img { max-width: 100%; display: block; }
   .work-layout.panel-open .work-categories { max-width: 100%; }
   body.case-panel-active { overflow: hidden; }
 }
+
+/* ============ PERSONA TOOL (interactive — AI Persona Toolkit case study) ============ */
+.persona-tool {
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+.persona-tool-head { max-width: 640px; margin: 0 auto 36px; text-align: center; }
+.persona-tool-head .section-tag { display: block; margin-bottom: 10px; }
+.persona-tool-head h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 500; margin: 0 0 12px; }
+.persona-tool-head p { color: var(--text-secondary); line-height: 1.6; }
+
+.persona-tool-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 44px);
+  background: color-mix(in srgb, var(--text-primary) 6%, var(--bg));
+  border-radius: 24px;
+  padding: clamp(24px, 4vw, 40px);
+}
+@media (max-width: 780px) { .persona-tool-body { grid-template-columns: 1fr; } }
+
+.persona-name-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 26px;
+}
+.persona-name-field input {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.persona-trait { margin-bottom: 22px; }
+.persona-trait-title { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.persona-trait-labels { display: flex; justify-content: space-between; gap: 12px; font-size: 11.5px; color: var(--text-tertiary); margin-top: 6px; }
+.persona-slider { width: 100%; accent-color: var(--primary); cursor: pointer; }
+
+.persona-swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px; }
+.persona-swatch { border-radius: 12px; padding: 14px 12px; color: #fff; }
+.persona-swatch span { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.85; }
+.persona-swatch strong { display: block; font-size: 13px; margin-top: 5px; font-family: var(--font-mono, inherit); }
+
+.persona-summary { line-height: 1.65; color: var(--text-secondary); margin-bottom: 18px; }
+.persona-voice { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-direction: column; gap: 9px; }
+.persona-voice li { font-size: 14px; line-height: 1.5; color: var(--text-secondary); padding-left: 18px; position: relative; }
+.persona-voice li::before { content: '—'; position: absolute; left: 0; color: var(--primary); }
+
+.persona-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #faf8f0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.persona-download-btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
+.persona-download-hint { font-size: 12px; color: var(--text-tertiary); margin-top: 10px; }
