@@ -35,21 +35,27 @@
   <main id="top">
 
     <section class="project-hero">
-      <div class="hero-polaroid project-hero-polaroid">
+      <div class="hero-polaroid project-hero-polaroid project-hero-split">
         <div class="washi-tape" style="background: rgba(var(--accent-rgb), 0.6);"></div>
-        <a href="../index.html#work" class="project-back" data-hover>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          Back to Work
-        </a>
-        <span class="section-tag" data-reveal>Internal Prototype — Business Intelligence Hub</span>
-        <h1 class="project-hero-title" data-reveal>BI Hub <em>Prototyping</em></h1>
-        <p class="section-desc" data-reveal>A Wizard-of-Oz prototype built to make AI-powered financial insight, ad-hoc data querying, and cross-business analytics feel shippable — before a line of production infrastructure exists.</p>
-
-        <div class="project-meta" data-reveal>
-          <div class="project-meta-item"><span>Role</span><strong>Design &amp; prototype engineering</strong></div>
-          <div class="project-meta-item"><span>Surface</span><strong>Intuit Design System, Fusion Bench shell</strong></div>
-          <div class="project-meta-item"><span>Stack</span><strong>React, TypeScript, Vite</strong></div>
-          <div class="project-meta-item"><span>Status</span><strong>39 iterative deploys and counting</strong></div>
+        <div class="project-hero-intro">
+          <a href="../index.html#work" class="project-back" data-hover>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Work
+          </a>
+          <span class="section-tag" data-reveal>Internal Prototype — Business Intelligence Hub</span>
+          <h1 class="project-hero-title" data-reveal>BI Hub <em>Prototyping</em></h1>
+          <p class="section-desc" data-reveal>A Wizard-of-Oz prototype built to make AI-powered financial insight, ad-hoc data querying, and cross-business analytics feel shippable — before a line of production infrastructure exists.</p>
+        </div>
+        <div class="mock-frame-inner project-hero-media">
+          <img src="../images/bihub/bihub-overview-ai-panel.png" alt="Business Intelligence Hub overview — key metrics, frequently used dashboards and reports, with the Intuit Intelligence AI panel open alongside" loading="lazy" data-parallax data-speed="0.06" />
+        </div>
+        <div class="project-hero-details">
+          <div class="project-meta" data-reveal>
+            <div class="project-meta-item"><span>Role</span><strong>Design &amp; prototype engineering</strong></div>
+            <div class="project-meta-item"><span>Surface</span><strong>Intuit Design System, Fusion Bench shell</strong></div>
+            <div class="project-meta-item"><span>Stack</span><strong>React, TypeScript, Vite</strong></div>
+            <div class="project-meta-item"><span>Status</span><strong>39 iterative deploys and counting</strong></div>
+          </div>
         </div>
       </div>
     </section>
@@ -94,6 +100,13 @@
       </div>
     </section>
 
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/bihub/bihub-cash-flow-dashboard.png" alt="Cash Flow Insights dashboard with an Intuit Intelligence button embedded directly on the Cash burn rate per deal stage and Expected Cash Flow cards" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">The AI copilot isn't confined to its side panel — an "Intuit Intelligence" entry point sits directly on individual dashboard cards, reasoning about that specific chart's data on demand.</p>
+    </section>
+
     <section class="project-section">
       <div class="project-section-grid">
         <div class="project-section-label">
@@ -104,6 +117,13 @@
           <p>What makes this deep rather than merely wide is the cross-referencing: saved workbooks are seeded with fully populated multi-tab content per business, and saved pages reference specific tabs of specific workbooks by id, so opening a page and seeing a "live" chart inline is really that document resolving a pointer into the workbook data layer. Nothing about that relationship is hard-coded per page — it's a small, real data model doing the work a hand-placed screenshot usually would.</p>
         </div>
       </div>
+    </section>
+
+    <section class="mock-frame" data-reveal>
+      <div class="mock-frame-inner">
+        <img src="../images/bihub/bihub-financial-page.png" alt="A Financial Page — a Notion-style Q4 FY25 Close Recap document with narrative text and an embedded, live Q4 KPIs block pulling revenue, gross margin, operating cash, and DSO" loading="lazy" />
+      </div>
+      <p class="mock-frame-caption">A Financial Page in practice — narrative and a live KPI block sitting in the same document, the KPI block resolving a real pointer into the workbook data layer rather than a pasted screenshot.</p>
     </section>
 
     <blockquote class="project-quote" data-reveal>

@@ -32,7 +32,7 @@
 
   function taglineHTML() {
     return (
-      '<p class="nav-tagline">Staff Product Designer @Quickbooks. I love designing for ' +
+      '<p class="nav-tagline">Staff Product Designer @Intuit. I love designing for ' +
       '<span class="dynamic-word-wrap">' +
       '<span class="dynamic-word-sizer" aria-hidden="true">' +
       '<span>Enterprise</span>' +
