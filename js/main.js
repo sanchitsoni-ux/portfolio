@@ -3,7 +3,7 @@
 
   /* ============ THEME SWITCHER ============ */
   var THEME_KEY = 'portfolio-theme';
-  var DEFAULT_THEME = 'hand-drawn';
+  var DEFAULT_THEME = 'workbook';
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
